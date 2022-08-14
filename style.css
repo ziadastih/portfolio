@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* =============primary======== */
+  --mainColor: #01a1c1;
+
+  /* =========secondary============ */
+  --fontColor: #b23b23;
+  --SecondColor: #e45613;
+
+  /* ============fonts related========== */
+  --textfont: #332d39;
+  --fontSansSerif: "PT Sans", sans-serif;
+  --fontSerif: "Merriweather", serif;
+}
+
+.nav-bar {
+  height: 10vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* ============logo=============== */
+.logo {
+  width: 90px;
+  margin-left: 20px;
+}
+/* ==============links container======== */
+.links-container {
+  position: absolute;
+  width: 100vw;
+  background-color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 10vh;
+  border-top: 1px solid var(--mainColor);
+  transition: 500ms ease-in;
+}
+/* ==============link for mobile margin top==== */
+.link {
+  list-style: none;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+/* ===========links for mobile===== */
+.link a {
+  font-family: var(--fontSansSerif);
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--textfont);
+  margin-top: 40px;
+  gap: 5px;
+}
+
+/* =============toggle menu ========== */
+.toggle {
+  display: flex;
+  align-items: flex-end;
+
+  justify-content: center;
+  flex-direction: column;
+  width: 30px;
+  height: 40px;
+  gap: 4px;
+  margin-right: 20px;
+  transition: 300ms ease-in;
+  cursor: pointer;
+}
+
+.line {
+  height: 2px;
+  background-color: var(--mainColor);
+  border-radius: 10px;
+  transition: 300ms ease-in;
+}
+.line-one {
+  width: 20px;
+}
+.line-two {
+  width: 15px;
+  transition: 2000ms ease-in;
+}
+.line-three {
+  width: 20px;
+}
+/* ================end of line============ */
+
+/* =============intro section ============= */
+.intro-section {
+  width: 100vw;
+  height: 90vh;
+  background-image: url(./pc-intor-bg/ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-direction: column;
+}
+
+.question-text {
+  width: 250px;
+  line-height: 35px;
+  justify-self: start;
+  margin-top: 20px;
+  text-align: start;
+  text-transform: capitalize;
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  color: var(--mainColor);
+}
+
+.highlight {
+  font-family: var(--fontSerif);
+  font-weight: 700;
+  font-style: italic;
+  color: whitesmoke;
+  transition: 300ms ease-in;
+}
+/* ====================3d text================ */
+.table-text {
+  width: 70vw;
+  font-size: 5em;
+  line-height: 55px;
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  bottom: 20px;
+  font-family: var(--fontSansSerif);
+  transform-origin: bottom left;
+  color: transparent;
+  text-shadow: 1px -1px 10px var(--textfont), 0px -1px 10px var(--textfont),
+    -1px -1px 10px var(--textfont),
+    /* first section */ 0px -2px 3px var(--mainColor),
+    -1px -2px 3px var(--mainColor), -2px -2px 3px var(--mainColor),
+    /* ===========second seciton======= */ -1px -3px 3px var(--mainColor),
+    -2px -3px 3px var(--mainColor), -3px -3px 3px var(--mainColor),
+    /* ==========third section======= */ -2px -4px 2px var(--mainColor),
+    -3px -4px 2px var(--mainColor), -4px -4px 2px var(--mainColor),
+    /* =======fourth section========= */ -3px -5px 1px var(--mainColor),
+    -4px -5px 1px var(--mainColor), -5px -5px 1px var(--mainColor);
+}
+.table-text::before {
+  content: "let me guide you through";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: bottom left;
+  z-index: -1;
+  color: transparent;
+  text-shadow: 15px 0px 20px rgba(0, 0, 0, 0.25),
+    15px 0px 25px rgba(0, 0, 0, 0.2), 15px 0px 35px rgba(0, 0, 0, 0.15),
+    15px 0px 45px rgba(0, 0, 0, 0.1);
+}
+/* ==================guide btn=========== */
+.guide-btn {
+  font-size: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  border: none;
+  margin-left: 10px;
+  background-color: var(--mainColor);
+  color: whitesmoke;
+  border-radius: 5px;
+  transition: 300ms ease-in;
+}
+
+.guide-btn:hover {
+  color: var(--mainColor);
+  background-color: whitesmoke;
+}
+
+/* =========section roadmap================= */
+.roadmap {
+  height: 100vh;
+  width: 100vw;
+}
+
+.projects {
+  height: 100vh;
+  word-wrap: 100vw;
+  background-color: var(--SecondColor);
+}
+
+.about-me {
+  height: 100vh;
+  width: 100vw;
+}
+.contact-btn {
+  display: none;
+}
+
+/* =============750px+ view=============== */
+@media only screen and (min-width: 750px) {
+  /* =========btn================ */
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fontSansSerif);
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: var(--textfont);
+    cursor: pointer;
+    margin-right: 30px;
+    padding: 10px 30px;
+    background-color: var(--SecondColor);
+    border-radius: 10px;
+  }
+  .toggle {
+    display: none;
+  }
+  .links-container {
+    top: 0;
+    border: none;
+    position: static;
+    width: 70vw;
+    display: flex;
+  }
+  .nav-links {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  ul {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-right: 30px;
+  }
+  .link {
+    display: flex;
+
+    margin-bottom: 0;
+    flex-direction: row;
+    margin-left: 10px;
+  }
+  .link a {
+    margin-top: 0;
+  }
+
+  /* ==============section intro ========== */
+  .intro-section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .question-text {
+    text-align: center;
+    align-self: flex-start;
+    margin-left: 140px;
+    width: 100vw;
+  }
+  .table-text {
+    justify-content: center;
+    align-self: center;
+    left: 30%;
+    margin-bottom: 25px;
+    width: 400px;
+  }
+}
+
+/* ==========hovers ============= */
+.toggle:hover {
+  opacity: 0.5;
+}
+.link a:hover {
+  color: var(--mainColor);
+}
+.highlight:hover {
+  color: var(--SecondColor);
+}
+/* =============js class============== */
+
+.toggle-rotate {
+  transform: rotate(-90deg);
+}
+.line-slide {
+  align-self: flex-start;
+}
+
+.show-links {
+  display: flex;
+}
+.fixed-nav {
+  position: absolute;
+  top: 0;
+}

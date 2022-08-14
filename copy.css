@@ -1,0 +1,9 @@
+text-shadow: 1px -1px 10px rgba(255, 255, 255, 0.4),
+  0px -1px 10px rgba(255, 255, 255, 0.4),
+  -1px -1px 10px rgba(255, 255, 255, 0.4), /* first section */ 0px -2px 3px #fff,
+  -1px -2px 3px #fff, -2px -2px 3px #fff,
+  /* ===========second seciton======= */ -1px -3px 3px #ddd, -2px -3px 3px #ddd,
+  -3px -3px 3px #ddd, /* ==========third section======= */ -2px -4px 2px #fff,
+  -3px -4px 2px #fff, -4px -4px 2px #fff,
+  /* =======fourth section========= */ -3px -5px 1px #fff, -4px -5px 1px #fff,
+  -5px -5px 1px #fff;

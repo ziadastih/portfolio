@@ -17,36 +17,50 @@
   --fontSansSerif: "PT Sans", sans-serif;
   --fontSerif: "Merriweather", serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 .nav-bar {
   height: 10vh;
   width: 100vw;
-  background-color: white;
+  background-color: whitesmoke;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 999;
 }
 /* ============logo=============== */
 .logo {
   width: 90px;
   margin-left: 20px;
+  z-index: 999;
 }
 /* ==============links container======== */
 .links-container {
   position: absolute;
   width: 100vw;
-  background-color: white;
-  display: none;
+  background-color: whitesmoke;
+  display: flex;
+  transform: translateY(-200%);
   align-items: center;
   justify-content: center;
   top: 10vh;
   border-top: 1px solid var(--mainColor);
-  transition: 500ms ease-in;
+  transition: 300ms ease-in;
+  z-index: 100;
 }
 /* ==============link for mobile margin top==== */
 .link {
   list-style: none;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 40px;
 }
 
@@ -65,7 +79,7 @@
 }
 
 /* =============toggle menu ========== */
-.toggle {
+.toggle-btn {
   display: flex;
   align-items: flex-end;
 
@@ -101,19 +115,20 @@
 .intro-section {
   width: 100vw;
   height: 90vh;
-  background-image: url(./pc-intor-bg/ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
+  background-image: url(./wp.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   flex-direction: column;
 }
 
 .question-text {
   width: 250px;
+  letter-spacing: 1.2px;
   line-height: 35px;
   justify-self: start;
   margin-top: 20px;
@@ -123,111 +138,464 @@
   font-weight: 400;
   color: var(--mainColor);
 }
-
+.name {
+  margin-top: 10px;
+  transform: translateX(200%);
+  transition: 500ms ease-in;
+}
+.question {
+  transform: translateX(-200%);
+  transition: 500ms ease-in;
+}
 .highlight {
   font-family: var(--fontSerif);
+  font-size: 20px;
   font-weight: 700;
   font-style: italic;
   color: whitesmoke;
   transition: 300ms ease-in;
-}
-/* ====================3d text================ */
-.table-text {
-  width: 70vw;
-  font-size: 5em;
-  line-height: 55px;
-  position: absolute;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  bottom: 20px;
-  font-family: var(--fontSansSerif);
-  transform-origin: bottom left;
-  color: transparent;
-  text-shadow: 1px -1px 10px var(--textfont), 0px -1px 10px var(--textfont),
-    -1px -1px 10px var(--textfont),
-    /* first section */ 0px -2px 3px var(--mainColor),
-    -1px -2px 3px var(--mainColor), -2px -2px 3px var(--mainColor),
-    /* ===========second seciton======= */ -1px -3px 3px var(--mainColor),
-    -2px -3px 3px var(--mainColor), -3px -3px 3px var(--mainColor),
-    /* ==========third section======= */ -2px -4px 2px var(--mainColor),
-    -3px -4px 2px var(--mainColor), -4px -4px 2px var(--mainColor),
-    /* =======fourth section========= */ -3px -5px 1px var(--mainColor),
-    -4px -5px 1px var(--mainColor), -5px -5px 1px var(--mainColor);
-}
-.table-text::before {
-  content: "let me guide you through";
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: bottom left;
-  z-index: -1;
-  color: transparent;
-  text-shadow: 15px 0px 20px rgba(0, 0, 0, 0.25),
-    15px 0px 25px rgba(0, 0, 0, 0.2), 15px 0px 35px rgba(0, 0, 0, 0.15),
-    15px 0px 45px rgba(0, 0, 0, 0.1);
-}
-/* ==================guide btn=========== */
-.guide-btn {
-  font-size: 20px;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-  border: none;
-  margin-left: 10px;
-  background-color: var(--mainColor);
-  color: whitesmoke;
-  border-radius: 5px;
-  transition: 300ms ease-in;
-}
-
-.guide-btn:hover {
-  color: var(--mainColor);
-  background-color: whitesmoke;
 }
 
 /* =========section roadmap================= */
 .roadmap {
   height: 100vh;
   width: 100vw;
+  background-image: linear-gradient(to bottom, #020f1f, #022f59);
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
+.roadmap-header {
+  width: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.border-line {
+  height: 2px;
+
+  width: 50px;
+  background-color: var(--mainColor);
+  transition: 300ms ease-in;
+}
+.roadmap-header span {
+  background-color: var(--mainColor);
+}
+
+.roadmap-header h1 {
+  font-family: var(--fontSerif);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 3px;
+}
+
+/* ==============rodamap global route============ */
+.route {
+  width: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+.light {
+  position: absolute;
+  height: 0px;
+  width: 2px;
+  background-color: #3dc4e6;
+  transition: 700ms ease-in;
+  box-shadow: 1px 1px 10px white;
+}
+.branch {
+  height: 20px;
+
+  width: 2px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  cursor: pointer;
+}
+.branch-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 0px;
+  width: 4px;
+  background-color: #3dc4e6;
+  transition: 500ms ease-in;
+  box-shadow: 1px 1px 10px white;
+}
+.circle {
+  position: absolute;
+  opacity: 0.3;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #f7ffff;
+
+  box-shadow: 1px 1px 10px gray;
+}
+/* ===================main route========== */
+.main-route {
+  position: relative;
+  height: 450px;
+}
+.inside-light {
+  height: 0px;
+}
+
+/* ============start of figma============== */
+.figma-route {
+  position: absolute;
+  align-items: flex-end;
+  height: 100px;
+
+  transform: rotate(90deg);
+  margin-top: 180px;
+  margin-left: 102px;
+}
+
+/* =================figma branch======== */
+.figma-branch {
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 211.5px;
+}
+.figma-branch-light {
+  align-self: flex-end;
+  height: 0px;
+}
+
+.figma-circle {
+  top: 0;
+  margin-top: -5px;
+}
+.figma-text {
+  position: absolute;
+  left: -100px;
+  transform: rotate(-90deg);
+  top: 0;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--fontSerif);
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+.figma-text img {
+  width: 20px;
+}
+
+/* ===============html route ============= */
+.html-route {
+  position: absolute;
+  align-items: flex-end;
+  height: 100px;
+
+  transform: rotate(-90deg);
+  margin-top: 230.5px;
+  margin-right: 102.028px;
+}
+
+/* ===================html branch============ */
+.html-branch {
+  position: absolute;
+  justify-content: flex-start;
+
+  margin-top: 261.5px;
+  margin-right: 205px;
+}
+
+.html-branch-light {
+  align-self: flex-end;
+}
+
+.html-circle {
+  top: 0;
+  margin-top: -5px;
+}
+.html-text {
+  position: absolute;
+  top: -20px;
+  transform: rotate(90deg);
+  left: 10px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--fontSerif);
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+
+.html-text i {
+  color: #ed632d;
+}
+/* ===================end of html branch ======= */
+
+/* =============start of css route ===== */
+.css-route {
+  position: absolute;
+  align-items: flex-end;
+  height: 100px;
+
+  transform: rotate(90deg);
+  margin-top: 280px;
+  margin-left: 102px;
+}
+
+/* =================css branch======== */
+.css-branch {
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 311.5px;
+}
+.css-branch-light {
+  align-self: flex-end;
+}
+
+.css-branch:hover .css-branch-light {
+  height: 20px;
+}
+.css-circle {
+  top: 0;
+  margin-top: -5px;
+}
+.css-text {
+  position: absolute;
+  left: -100px;
+  transform: rotate(-90deg);
+  top: 0;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--fontSerif);
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+.css-text i {
+  color: #146cac;
+}
+/* =================end of CSS========== */
+/* ===============js route ============= */
+.js-route {
+  position: absolute;
+  align-items: flex-end;
+  height: 100px;
+
+  transform: rotate(-90deg);
+  margin-top: 350.5px;
+  margin-right: 102.028px;
+}
+
+/* ===================js branch============ */
+.js-branch {
+  position: absolute;
+  transform: rotate(180deg);
+  margin-top: 399px;
+  margin-right: 201px;
+}
+
+.js-branch-light {
+  align-self: flex-end;
+}
+
+.js-circle {
+  top: 0;
+  margin-top: -5px;
+}
+.js-text {
+  position: absolute;
+  left: -100px;
+  transform: rotate(90deg);
+  top: -10px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--fontSerif);
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+.js-text i {
+  color: #ebd619;
+}
+/* ===============END OF JS============= */
+/* =============start of react route ===== */
+.react-route {
+  position: absolute;
+  align-items: flex-end;
+  height: 100px;
+
+  transform: rotate(90deg);
+  margin-top: 400px;
+  margin-left: 102px;
+}
+
+/* =================react branch======== */
+.react-branch {
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 439px;
+}
+.react-branch-light {
+  align-self: flex-end;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.react-circle {
+  margin-bottom: -5px;
+  bottom: 0;
+}
+.react-text {
+  position: absolute;
+  left: 0px;
+  transform: rotate(-90deg);
+  top: 0;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--fontSerif);
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+.react-text i {
+  color: #61dbfb;
+}
+/* ===============end of react================== */
+
+/* ==================== project section========= */
 
 .projects {
   height: 100vh;
-  word-wrap: 100vw;
-  background-color: var(--SecondColor);
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
+/* ======================about me section======== */
 .about-me {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
-.contact-btn {
-  display: none;
+.aboutMe-header {
+  width: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.border-line {
+  height: 2px;
+  width: 50px;
+  background-color: var(--textfont);
+  transition: 300ms ease-in;
+  border-radius: 10px;
 }
 
+.aboutMe-header h1 {
+  font-family: var(--fontSerif);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--mainColor);
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 3px;
+}
+
+/* ======================about me section======== */
+.projects {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.projects-header {
+  width: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.border-line {
+  height: 2px;
+  width: 50px;
+  background-color: var(--textfont);
+  transition: 300ms ease-in;
+  border-radius: 10px;
+}
+
+.projects-header h1 {
+  font-family: var(--fontSerif);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--mainColor);
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 3px;
+}
+
+/* =================go to top  btn========= */
+.toTop-btn {
+  font-size: 1.25rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: var(--mainColor);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  color: white;
+  animation: bounce 2s ease-in-out infinite;
+  visibility: hidden;
+}
 /* =============750px+ view=============== */
 @media only screen and (min-width: 750px) {
   /* =========btn================ */
-  .contact-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--fontSansSerif);
-    font-weight: 500;
-    text-transform: capitalize;
-    font-size: 20px;
-    color: var(--textfont);
-    cursor: pointer;
-    margin-right: 30px;
-    padding: 10px 30px;
-    background-color: var(--SecondColor);
-    border-radius: 10px;
-  }
-  .toggle {
+
+  .toggle-btn {
     display: none;
   }
   .links-container {
@@ -236,6 +604,7 @@
     position: static;
     width: 70vw;
     display: flex;
+    transform: translateY(0);
   }
   .nav-links {
     width: 70vw;
@@ -271,8 +640,17 @@
   .question-text {
     text-align: center;
     align-self: flex-start;
-    margin-left: 140px;
+    /* margin-left: 140px; */
     width: 100vw;
+  }
+  .highlight {
+    font-size: 24px;
+  }
+  .name {
+    transition: 500ms ease-in;
+  }
+  .question {
+    transition: 500ms ease-in;
   }
   .table-text {
     justify-content: center;
@@ -293,6 +671,28 @@
 .highlight:hover {
   color: var(--SecondColor);
 }
+.roadmap-header h1:hover + .border-line {
+  width: 190px;
+}
+.aboutMe-header h1:hover + .border-line {
+  width: 150px;
+}
+.projects-header h1:hover + .border-line {
+  width: 140px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* =============js class============== */
 
 .toggle-rotate {
@@ -303,9 +703,31 @@
 }
 
 .show-links {
-  display: flex;
+  transform: translateY(0);
 }
 .fixed-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
+  box-shadow: var(--textfont);
+}
+.translate {
+  transform: translateX(0);
+}
+.show-text {
+  opacity: 1;
+}
+.show-btn {
+  visibility: visible;
+}
+.drive {
+  height: 450px;
+}
+.corner {
+  height: 100px;
+}
+.park {
+  height: 10px;
+}
+.enter {
+  opacity: 1;
 }

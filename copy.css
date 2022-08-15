@@ -1,9 +1,36 @@
-text-shadow: 1px -1px 10px rgba(255, 255, 255, 0.4),
-  0px -1px 10px rgba(255, 255, 255, 0.4),
-  -1px -1px 10px rgba(255, 255, 255, 0.4), /* first section */ 0px -2px 3px #fff,
-  -1px -2px 3px #fff, -2px -2px 3px #fff,
-  /* ===========second seciton======= */ -1px -3px 3px #ddd, -2px -3px 3px #ddd,
-  -3px -3px 3px #ddd, /* ==========third section======= */ -2px -4px 2px #fff,
-  -3px -4px 2px #fff, -4px -4px 2px #fff,
-  /* =======fourth section========= */ -3px -5px 1px #fff, -4px -5px 1px #fff,
-  -5px -5px 1px #fff;
+.table-text {
+  opacity: 0;
+  transition: 500ms ease-in;
+  width: 70vw;
+  font-size: 5em;
+  line-height: 55px;
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  bottom: 20px;
+  font-family: var(--fontSansSerif);
+  transform-origin: bottom left;
+  color: transparent;
+  text-shadow: 1px -1px 10px var(--textfont), 0px -1px 10px var(--mainColor),
+    -1px -1px 10px whitesmoke, /* first section */ 0px -2px 3px var(--mainColor),
+    -1px -2px 3px var(--mainColor), -2px -2px 3px var(--mainColor),
+    /* ===========second seciton======= */ -1px -3px 3px var(--mainColor),
+    -2px -3px 3px var(--mainColor), -3px -3px 3px var(--mainColor),
+    /* ==========third section======= */ -2px -4px 2px var(--mainColor),
+    -3px -4px 2px var(--mainColor), -4px -4px 2px var(--mainColor),
+    /* =======fourth section========= */ -3px -5px 1px var(--mainColor),
+    -4px -5px 1px var(--mainColor), -5px -5px 1px var(--mainColor);
+}
+.table-text::before {
+  content: "let me guide you through";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: bottom left;
+  z-index: -1;
+  color: transparent;
+  text-shadow: 15px 0px 20px rgba(0, 0, 0, 0.25),
+    15px 0px 25px rgba(0, 0, 0, 0.2), 15px 0px 35px rgba(0, 0, 0, 0.15),
+    15px 0px 45px rgba(0, 0, 0, 0.1);
+}

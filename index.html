@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" href="./ZA-01.png" />
+    <title>Z.Astih</title>
     <!-- ========still need Logo=========== -->
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,9 +26,10 @@
     ></script>
   </head>
   <body>
+    <!-- ===================start of nav========= -->
     <nav class="nav-bar">
-      <img src="./2022-08-14 (1) 1.png" alt="" class="logo" />
-      <div class="toggle">
+      <img src="./ZA-01.png" alt="" class="logo" />
+      <div class="toggle-btn">
         <div class="line-one line"></div>
         <div class="line-two line"></div>
         <div class="line-three line"></div>
@@ -36,14 +38,14 @@
         <div class="nav-links">
           <ul>
             <li class="link">
-              <a href="#intro">
+              <a href="#intro" class="scroll-link">
                 <i class="fa-solid fa-door-open"></i>
                 <p>Introduction</p>
               </a>
             </li>
             <!-- ===========rodamap ======= -->
             <li class="link">
-              <a href="#roadmap">
+              <a href="#roadmap" class="scroll-link">
                 <i class="fa-solid fa-map"></i>
 
                 <p>My Roadmap</p></a
@@ -51,7 +53,7 @@
             </li>
             <!-- =========== projects======== -->
             <li class="link">
-              <a href="#projects">
+              <a href="#projects" class="scroll-link">
                 <i class="fa-solid fa-briefcase"></i>
                 <p>projects</p>
               </a>
@@ -59,7 +61,7 @@
 
             <!-- =========about me====== -->
             <li class="link">
-              <a href="#aboutMe">
+              <a href="#aboutMe" class="scroll-link">
                 <i class="fa-solid fa-address-card"></i>
                 <p>about me</p></a
               >
@@ -69,44 +71,126 @@
       </div>
     </nav>
     <!-- ================end of nav bar============ -->
+    <!-- ===============start of intro========== -->
     <section id="intro" class="intro-section">
       <div class="question-text">
-        <h3>
+        <h3 class="question">
           are <span class="highlight">you</span> looking for a
           <span class="highlight">
             <br />
             front-end-developer</span
           >
           ?
-          <br />
-          <br />
+        </h3>
 
+        <h3 class="name">
           my Name is <span class="highlight">Ziad Astih</span> , a
           self-taught-developer , and i am happy to help
           <span class="highlight">you</span>.
         </h3>
       </div>
-      <button class="contact-btn">contact Me</button>
-      <div class="table-text">
-        let me guide you through
-        <button class="guide-btn">
-          <i class="fa-solid fa-angles-down"></i>
-        </button>
-      </div>
     </section>
+    <!-- ================end of intro========== -->
     <!-- ============roadmap============ -->
     <section id="roadmap" class="roadmap">
-      <h1>roadmap</h1>
+      <div class="roadmap-header">
+        <h1>my roadmap</h1>
+        <span class="border-line"></span>
+      </div>
+      <!-- ================main route========== -->
+      <div class="main-route route">
+        <div class="inside-light light"></div>
+      </div>
+      <!-- =============figma route=========== -->
+      <div class="figma-route route">
+        <div class="figma-text">
+          <img src="./th (1) 1.png" alt="" />
+          <p>FIGMA</p>
+        </div>
+
+        <div class="figma-light light"></div>
+      </div>
+      <div class="figma-branch branch">
+        <div class="figma-branch-light branch-light">
+          <span class="figma-circle circle"></span>
+        </div>
+      </div>
+      <!-- =================html route =====-->
+
+      <div class="html-route route">
+        <div class="html-text">
+          <i class="fa-brands fa-html5"></i>
+          <p>HTML5</p>
+        </div>
+        <div class="html-light light"></div>
+      </div>
+      <div class="html-branch branch">
+        <div class="html-branch-light branch-light">
+          <span class="html-circle circle"></span>
+        </div>
+      </div>
+
+      <!-- =============css route=========== -->
+      <div class="css-route route">
+        <div class="css-text">
+          <i class="fa-brands fa-css3-alt"></i>
+          <p>CSS3</p>
+        </div>
+
+        <div class="css-light light"></div>
+      </div>
+      <div class="css-branch branch">
+        <div class="css-branch-light branch-light">
+          <span class="css-circle circle"></span>
+        </div>
+      </div>
+      <!-- =============js route=========== -->
+      <div class="js-route route">
+        <div class="js-text">
+          <i class="fa-brands fa-js"></i>
+          <p>JS</p>
+        </div>
+
+        <div class="js-light light"></div>
+      </div>
+      <div class="js-branch branch">
+        <div class="js-branch-light branch-light">
+          <span class="js-circle circle"></span>
+        </div>
+      </div>
+      <!-- =============react route=========== -->
+      <div class="react-route route">
+        <div class="react-text">
+          <i class="fa-brands fa-react"></i>
+          <p>REACT</p>
+        </div>
+
+        <div class="react-light light"></div>
+      </div>
+      <div class="react-branch branch">
+        <div class="react-branch-light branch-light">
+          <span class="react-circle circle"></span>
+        </div>
+      </div>
+      <i class="fa-solid fa-brain-circuit brain"></i>
     </section>
     <!-- =============projects========= -->
     <section id="projects" class="projects">
-      <h1>projects</h1>
+      <div class="projects-header">
+        <h1>projects</h1>
+        <span class="border-line"></span>
+      </div>
     </section>
     <!-- ===============about me=========== -->
     <section id="aboutMe" class="about-me">
-      <h1>about me</h1>
+      <div class="aboutMe-header">
+        <h1>about me</h1>
+        <span class="border-line"></span>
+      </div>
     </section>
-
+    <a class="scroll-link toTop-btn" href="#intro">
+      <i class="fas fa-arrow-up"></i>
+    </a>
     <script src="./app.js"></script>
   </body>
 </html>

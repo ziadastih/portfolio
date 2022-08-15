@@ -196,6 +196,19 @@ body {
   margin-top: 30px;
   margin-bottom: 3px;
 }
+/* ================start date ========= */
+.start-date {
+  align-self: flex-start;
+  font-family: var(--fontSansSerif);
+  font-style: italic;
+  margin-left: 20px;
+  color: var(--mainColor);
+  font-size: 12px;
+  text-transform: capitalize;
+}
+.start-date span {
+  font-size: 15px;
+}
 
 /* ==============rodamap global route============ */
 .route {
@@ -211,7 +224,7 @@ body {
   height: 0px;
   width: 2px;
   background-color: #3dc4e6;
-  transition: 700ms ease-in;
+  transition: 500ms ease-in;
   box-shadow: 1px 1px 10px white;
 }
 .branch {
@@ -231,7 +244,7 @@ body {
   height: 0px;
   width: 4px;
   background-color: #3dc4e6;
-  transition: 500ms ease-in;
+  transition: 200ms ease-in;
   box-shadow: 1px 1px 10px white;
 }
 .circle {
@@ -240,9 +253,31 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #f7ffff;
-
+  background-color: transparent;
+  border: 2px solid white;
   box-shadow: 1px 1px 10px gray;
+}
+.install {
+  font-size: 8px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  opacity: 0;
+}
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--fontSerif);
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
 }
 /* ===================main route========== */
 .main-route {
@@ -250,7 +285,13 @@ body {
   height: 450px;
 }
 .inside-light {
+  position: absolute;
   height: 0px;
+  width: 2px;
+  background-color: #3dc4e6;
+
+  box-shadow: 1px 1px 10px white;
+  transition: 1000ms ease-in;
 }
 
 /* ============start of figma============== */
@@ -264,6 +305,14 @@ body {
   margin-left: 102px;
 }
 
+.figma-install {
+  position: absolute;
+
+  left: -75px;
+  transform: rotate(-90deg);
+  top: -10px;
+  width: 100px;
+}
 /* =================figma branch======== */
 .figma-branch {
   position: absolute;
@@ -285,15 +334,6 @@ body {
   transform: rotate(-90deg);
   top: 0;
   width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  font-family: var(--fontSerif);
-  font-size: 20px;
-  font-weight: 500;
-  color: white;
 }
 .figma-text img {
   width: 20px;
@@ -333,19 +373,17 @@ body {
   transform: rotate(90deg);
   left: 10px;
   width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  font-family: var(--fontSerif);
-  font-size: 20px;
-  font-weight: 500;
-  color: white;
 }
 
 .html-text i {
   color: #ed632d;
+}
+.html-install {
+  position: absolute;
+  left: -15px;
+  transform: rotate(90deg);
+  top: -10px;
+  width: 100px;
 }
 /* ===================end of html branch ======= */
 
@@ -370,9 +408,6 @@ body {
   align-self: flex-end;
 }
 
-.css-branch:hover .css-branch-light {
-  height: 20px;
-}
 .css-circle {
   top: 0;
   margin-top: -5px;
@@ -383,18 +418,16 @@ body {
   transform: rotate(-90deg);
   top: 0;
   width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  font-family: var(--fontSerif);
-  font-size: 20px;
-  font-weight: 500;
-  color: white;
 }
 .css-text i {
   color: #146cac;
+}
+.css-install {
+  position: absolute;
+  left: -80px;
+  transform: rotate(-90deg);
+  top: -10px;
+  width: 100px;
 }
 /* =================end of CSS========== */
 /* ===============js route ============= */
@@ -430,18 +463,17 @@ body {
   transform: rotate(90deg);
   top: -10px;
   width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  font-family: var(--fontSerif);
-  font-size: 20px;
-  font-weight: 500;
-  color: white;
 }
 .js-text i {
   color: #ebd619;
+}
+.js-install {
+  position: absolute;
+  font-size: 8px;
+  left: -125px;
+  transform: rotate(90deg);
+  top: 0px;
+  width: 100px;
 }
 /* ===============END OF JS============= */
 /* =============start of react route ===== */
@@ -476,21 +508,26 @@ body {
   transform: rotate(-90deg);
   top: 0;
   width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  font-family: var(--fontSerif);
-  font-size: 20px;
-  font-weight: 500;
-  color: white;
 }
 .react-text i {
   color: #61dbfb;
 }
-/* ===============end of react================== */
+.react-install {
+  position: absolute;
+  font-size: 8px;
 
+  text-align: center;
+  left: 20px;
+  transform: rotate(-90deg);
+  top: -10px;
+  width: 100px;
+}
+/* ===============end of react================== */
+.brain {
+  width: 150px;
+  opacity: 0.2;
+  transition: 500ms ease-in;
+}
 /* ==================== project section========= */
 
 .projects {
@@ -507,6 +544,7 @@ body {
 .about-me {
   height: 100vh;
   width: 100vw;
+  background-image: linear-gradient(to bottom, #020f1f, #022f59);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -524,7 +562,7 @@ body {
 .border-line {
   height: 2px;
   width: 50px;
-  background-color: var(--textfont);
+  background-color: var(--mainColor);
   transition: 300ms ease-in;
   border-radius: 10px;
 }
@@ -533,7 +571,7 @@ body {
   font-family: var(--fontSerif);
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--mainColor);
+  color: white;
   text-transform: uppercase;
   margin-top: 30px;
   margin-bottom: 3px;

@@ -16,7 +16,6 @@ const tableText = document.querySelector(".table-text");
 window.addEventListener("DOMContentLoaded", () => {
   nameContainer.classList.add("translate");
   questionContainer.classList.add("translate");
-  console.log(this.performance.now());
 });
 
 // ==============smooth scrolling=====================
@@ -28,6 +27,7 @@ window.addEventListener("scroll", function (e) {
   const navHeight = navBar.getBoundingClientRect().height;
   let scrollHeight = window.pageYOffset;
   activateRoadMap();
+  hoursSpent();
   if (scrollHeight > 400) {
     toTopBtn.classList.add("show-btn");
   } else {
@@ -48,10 +48,11 @@ window.addEventListener("scroll", function (e) {
 scrollLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(performance.now());
+
     const id = e.currentTarget.getAttribute("href").slice(1);
 
     const element = document.getElementById(id);
+
     const navHeight = navBar.getBoundingClientRect().height;
     const containerHeight = linksContainer.getBoundingClientRect().height;
 
@@ -63,10 +64,20 @@ scrollLinks.forEach((link) => {
     if (navHeight > 82) {
       position = position + containerHeight;
     }
+
     window.scrollTo({
       left: 0,
       top: position,
     });
+    const deviceWidth = screen.width;
+    if (deviceWidth > 389 && deviceWidth < 420) {
+      position = position - 400;
+      console.log(position);
+      window.scrollTo({
+        left: 0,
+        top: position,
+      });
+    }
     linksContainer.classList.remove("show-links");
     toggleBtn.classList.remove("toggle-rotate");
     lineTwo.classList.remove("line-slide");
@@ -161,6 +172,7 @@ function activateRoadMap() {
   // ==================setting the else removing all the timeout==================
   else {
     MainRoute.classList.remove("drive");
+    estHours.textContent = `0 h`;
     setTimeout(() => {
       figmaRoute.classList.remove("corner");
     }, 435);
@@ -204,3 +216,22 @@ function activateRoadMap() {
     }, 1000);
   }
 }
+
+// ===================est hours function ==========
+
+const estHours = document.querySelector(".hours-spent");
+let count = 0;
+function hoursSpent() {
+  let height = window.pageYOffset;
+  if (height > 350) {
+    const currentDate = new Date().getTime();
+    const StartDate = new Date(2022, 2, 23, 10, 0, 0).getTime();
+    let difference = currentDate - StartDate;
+
+    const estTimeSpent = Math.floor(difference / 3600000 / 5);
+    estHours.textContent = `${estTimeSpent} h`;
+  } else {
+    estHours.textContent = 0;
+  }
+}
+Time = setInterval(hoursSpent, 2000);

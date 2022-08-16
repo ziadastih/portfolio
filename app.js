@@ -13,6 +13,10 @@ toggleBtn.addEventListener("click", function () {
 const nameContainer = document.querySelector(".name");
 const questionContainer = document.querySelector(".question");
 const tableText = document.querySelector(".table-text");
+const preloader = document.querySelector(".pre-loader");
+window.addEventListener("load", function () {
+  preloader.classList.add("hide-preloader");
+});
 window.addEventListener("DOMContentLoaded", () => {
   nameContainer.classList.add("translate");
   questionContainer.classList.add("translate");
@@ -22,16 +26,29 @@ window.addEventListener("DOMContentLoaded", () => {
 const navBar = document.querySelector(".nav-bar");
 const scrollLinks = document.querySelectorAll(".scroll-link");
 const toTopBtn = document.querySelector(".toTop-btn");
+const contactBtn = document.querySelector(".contact");
 window.addEventListener("scroll", function (e) {
   e.preventDefault();
   const navHeight = navBar.getBoundingClientRect().height;
   let scrollHeight = window.pageYOffset;
   activateRoadMap();
   hoursSpent();
-  if (scrollHeight > 400) {
+  const deviceWidth = screen.width;
+  console.log(deviceWidth);
+  if (scrollHeight > 500) {
     toTopBtn.classList.add("show-btn");
+    if (deviceWidth > 750) {
+      contactBtn.innerHTML = `<i class="fa-solid fa-envelope"></i> let's talk`;
+      contactBtn.classList.add("ipad-move");
+    } else if (deviceWidth < 750) {
+      contactBtn.innerHTML = `<i class="fa-solid fa-envelope"></i>`;
+      contactBtn.classList.add("move");
+    }
   } else {
+    contactBtn.classList.remove("move");
+    contactBtn.classList.remove("ipad-move");
     toTopBtn.classList.remove("show-btn");
+    contactBtn.innerHTML = `<i class="fa-solid fa-envelope"></i> let's talk`;
   }
 
   if (scrollHeight > navHeight) {

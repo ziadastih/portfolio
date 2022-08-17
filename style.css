@@ -7,7 +7,9 @@
 :root {
   /* =============primary======== */
   --mainColor: #01a1c1;
-
+  --linear1: #020f1f;
+  --linear2: #022f59;
+  --insideLight: #3dc4e6;
   /* =========secondary============ */
   --fontColor: #b23b23;
   --SecondColor: #e45613;
@@ -161,7 +163,19 @@ body {
   flex-direction: column;
   z-index: -1;
 }
+.circle-guide {
+  width: 2px;
+  height: 2px;
+  background: transparent;
 
+  transition: 4000ms;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+}
+.translate-circle {
+  transform: translateY(3000px);
+}
 /* =====================QUESTION CONTAINER================== */
 .question-text {
   width: 350px;
@@ -246,7 +260,7 @@ body {
 .roadmap {
   min-height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(to bottom, #020f1f, #022f59);
+  background-image: linear-gradient(to bottom, var(--linear1), var(--linear2));
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -388,7 +402,7 @@ body {
   position: absolute;
   height: 0px;
   width: 2px;
-  background-color: #3dc4e6;
+  background-color: var(--insideLight);
 
   box-shadow: 1px 1px 10px white;
   transition: 1000ms ease-in;
@@ -631,50 +645,6 @@ body {
 /* ==================== project section========= */
 
 .projects {
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-/* ======================about me section======== */
-.about-me {
-  min-height: 90vh;
-  width: 100vw;
-  background-image: linear-gradient(to bottom, #020f1f, #022f59);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-.aboutMe-header {
-  width: 200px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-.aboutMe-header span {
-  background-color: var(--mainColor);
-}
-
-.aboutMe-header h1 {
-  font-family: var(--fontSerif);
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: white;
-  text-transform: uppercase;
-  margin-top: 30px;
-  margin-bottom: 3px;
-}
-
-/* ======================about me section======== */
-.projects {
   min-height: 100vh;
   width: 100vw;
   display: flex;
@@ -708,7 +678,183 @@ body {
   margin-top: 30px;
   margin-bottom: 3px;
 }
+/* ======================about me section======== */
+.about-me {
+  min-height: 90vh;
+  width: 100vw;
+  background-color: var(--linear1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.aboutMe-header {
+  width: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.aboutMe-header span {
+  background-color: var(--mainColor);
+}
 
+.aboutMe-header h1 {
+  font-family: var(--fontSerif);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 3px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 50vw);
+  margin-top: 40px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-image: url(./istockphoto-1085043290-612x612\ 1.png);
+  background-position: center;
+  background-size: contain;
+  width: 100vw;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+.grid {
+  cursor: pointer;
+  display: flex;
+  background-color: transparent;
+  height: 200px;
+  align-items: flex-start;
+  justify-content: start;
+  color: white;
+  text-align: center;
+}
+.grid-content {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 2s;
+}
+
+.grid-front,
+.grid-back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: 500ms ease-in;
+}
+
+.grid-front::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  width: 40vw;
+  height: 150px;
+  border: 3px solid var(--mainColor);
+  border-radius: 5px;
+  transform: translateZ(4rem);
+  box-shadow: 1px 1px 10px var(--mainColor);
+}
+.grid-back {
+  background: transparent;
+  transform: rotateY(0.5turn);
+}
+.grid-title {
+  font-family: var(--fontSerif);
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 700;
+  transform: translateZ(6rem);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  transition: 500ms ease-in;
+}
+.grid-subtitle {
+  font-size: 12px;
+  text-transform: capitalize;
+  transform: translateZ(4rem);
+  color: var(--mainColor);
+  font-weight: 500;
+  transition: 500ms;
+}
+
+.grid-body {
+  width: 150px;
+  font-size: 18px;
+  font-family: var(--fontSansSerif);
+  font-weight: 700;
+  color: whitesmoke;
+  text-transform: capitalize;
+  transform: translateZ(3rem);
+}
+
+/* ============front color============== */
+.grid-one-front,
+.grid-two-front {
+  background-color: var(--linear1);
+}
+.grid-three-front,
+.grid-four-front {
+  background-image: linear-gradient(to bottom, var(--linear1), var(--linear2));
+}
+.grid-five-front,
+.grid-six-front {
+  background-color: var(--linear2);
+}
+.grid-seven-front,
+.grid-eight-front {
+  background-image: linear-gradient(to top, var(--linear1), var(--linear2));
+}
+
+.grid-nine-front {
+  background-color: var(--linear1);
+}
+
+/* =================grid nine=============== */
+
+.grid-nine-content {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 100vw;
+}
+.grid-nine {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.grid-nine-front {
+  width: 100vw;
+}
+.grid-nine-back {
+  width: 100vw;
+}
+
+/* ======================about me section ends======== */
+
+/* =============footer========== */
+.footer {
+  width: 100vw;
+  height: 20vh;
+  background-color: white;
+}
 /* =================go to top  btn========= */
 .toTop-btn {
   position: fixed;
@@ -733,6 +879,16 @@ body {
 /* ===============MEDIA QUREY================= */
 /* ==============galaxy ford font and roamap */
 @media (max-width: 280px) {
+  .grid-title {
+    font-size: 15px;
+  }
+  .grid-subtitle {
+    font-size: 12px;
+  }
+  .grid-body {
+    width: 100px;
+    font-size: 10px;
+  }
   .question-text {
     width: 200px;
     font-size: 10px;
@@ -777,6 +933,56 @@ body {
 
 /* =============750px+ view=============== */
 @media only screen and (min-width: 750px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 33.3vw);
+  }
+  .grid-content {
+    width: 40vw;
+  }
+  .grid-front::before {
+    width: 30vw;
+  }
+
+  .grid-one-front,
+  .grid-two-front,
+  .grid-three-front {
+    background-image: linear-gradient(
+      to bottom,
+      var(--linear1),
+      var(--linear2)
+    );
+  }
+  .grid-four-front,
+  .grid-five-front,
+  .grid-six-front {
+    background-image: linear-gradient(
+      to bottom,
+      var(--linear2),
+      var(--linear2)
+    );
+  }
+  .grid-seven-front,
+  .grid-eight-front,
+  .grid-nine-front {
+    background-image: linear-gradient(to top, var(--linear1), var(--linear2));
+  }
+
+  /* ============grid nine============== */
+  .grid-nine-content {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    width: 33.3vw;
+  }
+  .grid-nine {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+  .grid-nine-front {
+    width: 33.3vw;
+  }
+  .grid-nine-back {
+    width: 33.3vw;
+  }
   /* =========btn================ */
   .btn {
     width: 200px;
@@ -981,4 +1187,14 @@ body {
   background-color: var(--mainColor);
   bottom: 0;
   left: 10px;
+}
+.grid-flip .grid-content {
+  transform: rotateY(0.5turn);
+}
+
+.hide-grid-front h2 {
+  opacity: 0;
+}
+.hide-grid-front p {
+  opacity: 0;
 }

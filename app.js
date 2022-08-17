@@ -29,12 +29,14 @@ const toTopBtn = document.querySelector(".toTop-btn");
 const contactBtn = document.querySelector(".contact");
 window.addEventListener("scroll", function (e) {
   e.preventDefault();
+
   const navHeight = navBar.getBoundingClientRect().height;
   let scrollHeight = window.pageYOffset;
+
   activateRoadMap();
   hoursSpent();
   const deviceWidth = screen.width;
-  console.log(deviceWidth);
+
   if (scrollHeight > 500) {
     toTopBtn.classList.add("show-btn");
     if (deviceWidth > 750) {
@@ -86,6 +88,7 @@ scrollLinks.forEach((link) => {
       left: 0,
       top: position,
     });
+
     const deviceWidth = screen.width;
     if (deviceWidth > 389 && deviceWidth < 420) {
       position = position - 400;
@@ -252,3 +255,25 @@ function hoursSpent() {
   }
 }
 Time = setInterval(hoursSpent, 2000);
+
+const grids = document.querySelectorAll(".grid");
+
+grids.forEach(function (grid) {
+  grid.addEventListener("click", function (e) {
+    let id = e.currentTarget.dataset.id;
+    console.log(id);
+    let gridFront = document.getElementById(id);
+    console.log(gridFront);
+    if (grid.classList.contains("grid-flip")) {
+      grid.classList.remove("grid-flip");
+      setTimeout(() => {
+        gridFront.classList.remove("hide-grid-front");
+      }, 300);
+    } else {
+      grid.classList.add("grid-flip");
+      setTimeout(() => {
+        gridFront.classList.add("hide-grid-front");
+      }, 700);
+    }
+  });
+});

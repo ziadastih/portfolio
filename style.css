@@ -779,12 +779,14 @@ body {
   transform: rotateY(0.5turn);
 }
 .grid-title {
+  line-height: 30px;
+  width: 150px;
   font-family: var(--fontSerif);
   letter-spacing: 2px;
   font-size: 18px;
   font-weight: 700;
   transform: translateZ(6rem);
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 15px;
   transition: 500ms ease-in;
 }
@@ -799,14 +801,27 @@ body {
 
 .grid-body {
   width: 150px;
-  font-size: 18px;
+  letter-spacing: 2px;
+  font-size: 12px;
   font-family: var(--fontSansSerif);
   font-weight: 700;
   color: whitesmoke;
   text-transform: capitalize;
   transform: translateZ(3rem);
 }
-
+.grid-body span {
+  font-family: var(--fontSerif);
+  font-size: 18px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--mainColor);
+}
+.fa-square-whatsapp {
+  color: #25d366;
+}
+.fa-discord {
+  color: #7289da;
+}
 /* ============front color============== */
 .grid-one-front,
 .grid-two-front {
@@ -852,8 +867,8 @@ body {
 /* =============footer========== */
 .footer {
   width: 100vw;
-  height: 20vh;
-  background-color: white;
+  height: 15vh;
+  background-color: var(--linear1);
 }
 /* =================go to top  btn========= */
 .toTop-btn {

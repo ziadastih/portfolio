@@ -261,9 +261,9 @@ const grids = document.querySelectorAll(".grid");
 grids.forEach(function (grid) {
   grid.addEventListener("click", function (e) {
     let id = e.currentTarget.dataset.id;
-    console.log(id);
+
     let gridFront = document.getElementById(id);
-    console.log(gridFront);
+
     if (grid.classList.contains("grid-flip")) {
       grid.classList.remove("grid-flip");
       setTimeout(() => {

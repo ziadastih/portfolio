@@ -152,7 +152,8 @@ body {
 .intro-section {
   width: 100vw;
   min-height: 90vh;
-  background-image: url(./ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
+  background-image: linear-gradient(to bottom, #020f1f, #05182d, #020f1f);
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -163,19 +164,7 @@ body {
   flex-direction: column;
   z-index: -1;
 }
-.circle-guide {
-  width: 2px;
-  height: 2px;
-  background: transparent;
 
-  transition: 4000ms;
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-}
-.translate-circle {
-  transform: translateY(3000px);
-}
 /* =====================QUESTION CONTAINER================== */
 .question-text {
   width: 350px;
@@ -191,12 +180,13 @@ body {
 }
 .name {
   margin-top: 20px;
-  transform: translateX(200%);
-  transition: 500ms ease-in;
+  font-size: 18px;
+  transition: 600ms ease-in;
+  transform: translateX(300%);
 }
 .question {
-  transform: translateX(-200%);
-  transition: 500ms ease-in;
+  transition: 400ms ease-in;
+  transform: translateX(-300%);
 }
 .highlight {
   font-family: var(--fontSerif);
@@ -204,7 +194,6 @@ body {
   font-weight: 700;
   font-style: italic;
   color: whitesmoke;
-  transition: 300ms ease-in;
 }
 /* ================BTN CONTAINERS========================= */
 
@@ -260,7 +249,12 @@ body {
 .roadmap {
   min-height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(to bottom, var(--linear1), var(--linear2));
+  background-image: linear-gradient(
+    to top,
+    var(--linear1),
+    var(--linear2),
+    var(--linear1)
+  );
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -651,6 +645,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-image: linear-gradient(to bottom, #020f1f, #05182d, #020f1f);
 }
 .projects-header {
   width: 200px;
@@ -700,7 +695,16 @@ body {
 .aboutMe-header span {
   background-color: var(--mainColor);
 }
-
+.bg-overlay {
+  background-image: url(./electronic-brain-vector-17222489.png);
+  width: 100vw;
+  min-height: 90vh;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  margin-top: 100px;
+}
 .aboutMe-header h1 {
   font-family: var(--fontSerif);
   font-weight: 700;
@@ -717,7 +721,7 @@ body {
   margin-top: 40px;
   overflow: hidden;
   border-radius: 10px;
-  background-image: url(./istockphoto-1085043290-612x612\ 1.png);
+
   background-position: center;
   background-size: contain;
   width: 100vw;
@@ -816,6 +820,9 @@ body {
   font-style: italic;
   color: var(--mainColor);
 }
+.grid-body img {
+  width: 18px;
+}
 .fa-square-whatsapp {
   color: #25d366;
 }
@@ -858,8 +865,13 @@ body {
 .grid-nine-front {
   width: 100vw;
 }
-.grid-nine-back {
+.grid-nine-back p {
   width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
 }
 
 /* ======================about me section ends======== */
@@ -954,10 +966,19 @@ body {
   .grid-content {
     width: 40vw;
   }
+  .grid-body span {
+    font-size: 24px;
+  }
+  .grid-body {
+    width: 30vw;
+    font-size: 15px;
+  }
   .grid-front::before {
     width: 30vw;
   }
-
+  .grid-subtitle i {
+    font-size: 20px;
+  }
   .grid-one-front,
   .grid-two-front,
   .grid-three-front {
@@ -998,6 +1019,13 @@ body {
   .grid-nine-back {
     width: 33.3vw;
   }
+  .grid-nine-back p {
+    font-size: 40px;
+  }
+  .grid-body img {
+    width: 35px;
+  }
+
   /* =========btn================ */
   .btn {
     width: 200px;
@@ -1055,7 +1083,7 @@ body {
     font-size: 24px;
   }
   .name {
-    transition: 500ms ease-in;
+    transition: 1000ms ease-in;
   }
   .question {
     transition: 500ms ease-in;
@@ -1080,7 +1108,16 @@ body {
     min-height: 70vh;
   }
   .about-me {
-    min-height: 90vh;
+    min-height: 70vh;
+  }
+  .grid-body span {
+    font-size: 20px;
+  }
+  .footer {
+    height: 0vh;
+  }
+  .bg-overlay {
+    min-height: 60vh;
   }
 }
 
@@ -1152,6 +1189,7 @@ body {
 }
 .translate {
   transform: translateX(0);
+  opacity: 1;
 }
 .show-text {
   opacity: 1;

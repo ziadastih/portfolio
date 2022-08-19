@@ -14,14 +14,16 @@ const nameContainer = document.querySelector(".name");
 const questionContainer = document.querySelector(".question");
 const tableText = document.querySelector(".table-text");
 const preloader = document.querySelector(".pre-loader");
+const btns = document.querySelectorAll(".btn");
 window.addEventListener("load", function () {
   preloader.classList.add("hide-preloader");
 });
-window.addEventListener("DOMContentLoaded", () => {
-  nameContainer.classList.add("translate");
-  questionContainer.classList.add("translate");
+window.addEventListener("DOMContentLoaded", function () {
+  questionAnimation();
+  nameAnimation();
+  offerAnimation();
+  showBtns();
 });
-
 // ==============smooth scrolling=====================
 const navBar = document.querySelector(".nav-bar");
 const scrollLinks = document.querySelectorAll(".scroll-link");
@@ -240,7 +242,7 @@ function activateRoadMap() {
 // ===================est hours function ==========
 
 const estHours = document.querySelector(".hours-spent");
-let count = 0;
+
 function hoursSpent() {
   let height = window.pageYOffset;
   if (height > 350) {
@@ -277,3 +279,226 @@ grids.forEach(function (grid) {
     }
   });
 });
+
+// ==============================INTODUCTION ANIMATION FUNCTION ====================
+function questionAnimation() {
+  const question = document.querySelector(".question");
+
+  const questionText = question.innerText;
+
+  const splitQuestion = questionText.split("");
+
+  question.innerHTML = "";
+  for (let i = 0; i < splitQuestion.length; i++) {
+    if (i > 10 && i < 29 && i != 19) {
+      question.innerHTML += `<span class = "normal-span highlighted-text">${splitQuestion[i]}</span><div class="space-block"></div> `;
+    } else if (i === 6 || i === 9) {
+      question.innerHTML += `<span class = "normal-span normal-text">${splitQuestion[i]}</span><div class="double-space-block"></div>`;
+    } else if (i === 10) {
+      question.innerHTML += `<span class = "normal-span normal-text">${splitQuestion[i]}</span><div class="double-space-block"></div>`;
+    } else if (i === 29) {
+      question.innerHTML += `<div class="space-block"></div><span class = "normal-span question-mark">${splitQuestion[i]}</span> `;
+    } else if (i === 19) {
+      question.innerHTML += `<span class = "normal-span highlighted-text">${splitQuestion[i]}</span><div class="double-space-block"></div>`;
+    } else {
+      question.innerHTML += `<span class = "normal-span normal-text">${splitQuestion[i]}</span><div class="space-block"></div>`;
+    }
+  }
+  let charachter = 0;
+
+  let timer = setInterval(ontick, 50);
+
+  function ontick() {
+    // selecting the element one by one from charachter 0 till the end of spans
+    const span = question.querySelectorAll("span")[charachter];
+    const spaceBlock = document.querySelectorAll(".space-block");
+    const doubleBlocks = document.querySelectorAll(".double-space-block");
+
+    let device = screen.width;
+    //   =============slow span===============
+    if (charachter === 0) {
+      span.classList.add("slow-span");
+    }
+    // ===========slower span========
+    if (charachter === 1) {
+      setTimeout(function () {
+        span.classList.add("slower-span");
+      }, 350);
+    }
+
+    //   ==========fast spans==========
+    if (charachter > 1 && charachter < 29) {
+      setTimeout(function () {
+        span.classList.add("fast-span");
+      }, 600);
+    } else if (charachter === 29) {
+      setTimeout(function () {
+        span.classList.add("slowest-span");
+      }, 650);
+    }
+
+    charachter++;
+    if (device > 700) {
+      setTimeout(() => {
+        spaceBlock.forEach(function (block) {
+          block.classList.add("space-out");
+        });
+        doubleBlocks.forEach(function (block) {
+          block.classList.add("double-space-out");
+        });
+      }, 2650);
+    } else {
+      setTimeout(() => {
+        spaceBlock.forEach(function (block) {
+          block.classList.add("mobile-space-out");
+        });
+        doubleBlocks.forEach(function (block) {
+          block.classList.add("mobile-double-space-out");
+        });
+      }, 2650);
+    }
+    if (charachter === splitQuestion.length) {
+      stopTimer();
+      return;
+    }
+  }
+  function stopTimer() {
+    clearInterval(timer);
+    timer = null;
+  }
+}
+// ===========================name text animation =================================
+
+function nameAnimation() {
+  const nameText = document.querySelector(".name");
+  const strName = nameText.innerText;
+  const splitName = strName.split("");
+  console.log(splitName);
+  nameText.innerHTML = "";
+  for (let i = 0; i < splitName.length; i++) {
+    if (i === 1 || i === 5 || i === 7 || i === 17 || i === 18 || i === 29) {
+      nameText.innerHTML += `<span class = "normal-span normal-text">${splitName[i]}</span><div class="double-space-block"></div>`;
+    } else if (i === 11) {
+      nameText.innerHTML += `<span class = "normal-span highlighted-text">${splitName[i]}</span><div class="double-space-block"></div>`;
+    } else if (i === 39) {
+      nameText.innerHTML += `<span class = "normal-span question-mark">${splitName[i]}</span> `;
+    } else if (i > 7 && i < 17) {
+      nameText.innerHTML += `<span class = "normal-span highlighted-text">${splitName[i]}</span><div class="space-block"></div>`;
+    } else {
+      nameText.innerHTML += `<span class = "normal-span normal-text">${splitName[i]}</span><div class="space-block"></div>`;
+    }
+  }
+
+  let number = 0;
+
+  let nameTimer = setInterval(onNametick, 33);
+
+  function onNametick() {
+    // selecting the element one by one from charachter 0 till the end of spans
+    const span = nameText.querySelectorAll("span")[number];
+
+    //   =============slow span===============
+    if (number === 0) {
+      span.classList.add("slow-span");
+    }
+    // ===========slower span========
+    if (number === 1) {
+      setTimeout(function () {
+        span.classList.add("slower-span");
+      }, 350);
+    }
+
+    //   ==========fast spans==========
+    if (number > 1 && number < 39) {
+      setTimeout(function () {
+        span.classList.add("fast-span");
+      }, 600);
+    } else if (number === 39) {
+      setTimeout(function () {
+        span.classList.add("slowest-span");
+      }, 650);
+    }
+
+    number++;
+
+    if (number === splitName.length) {
+      stopNameTimer();
+      return;
+    }
+  }
+  function stopNameTimer() {
+    clearInterval(nameTimer);
+    nameTimer = null;
+  }
+}
+// ===========================name text animation =================================
+function offerAnimation() {
+  const offerText = document.querySelector(".offer");
+  const stroffer = offerText.innerText;
+  const splitoffer = stroffer.split("");
+  console.log(splitoffer);
+  offerText.innerHTML = "";
+  for (let i = 0; i < splitoffer.length; i++) {
+    if (i === 2 || i === 4 || i === 19) {
+      offerText.innerHTML += `<span class = "normal-span normal-text">${splitoffer[i]}</span><div class="double-space-block"></div>`;
+    } else if (i === 15) {
+      offerText.innerHTML += `<span class = "normal-span highlighted-text">${splitoffer[i]}</span><div class="double-space-block"></div>`;
+    } else if (i === 25) {
+      offerText.innerHTML += `<span class = "normal-span question-mark">${splitoffer[i]}</span> `;
+    } else if ((i > 4 && i < 16) || (i > 19 && i < 25)) {
+      offerText.innerHTML += `<span class = "normal-span highlighted-text">${splitoffer[i]}</span><div class="space-block"></div>`;
+    } else {
+      offerText.innerHTML += `<span class = "normal-span normal-text">${splitoffer[i]}</span><div class="space-block"></div>`;
+    }
+  }
+
+  let count = 0;
+
+  let offerTimer = setInterval(onoffertick, 52);
+
+  function onoffertick() {
+    // selecting the element one by one from charachter 0 till the end of spans
+    const span = offerText.querySelectorAll("span")[count];
+
+    //   =============slow span===============
+    if (count === 0) {
+      span.classList.add("slow-span");
+    }
+    // ===========slower span========
+    if (count === 1) {
+      setTimeout(function () {
+        span.classList.add("slower-span");
+      }, 350);
+    }
+
+    //   ==========fast spans==========
+    if (count > 1 && count < 25) {
+      setTimeout(function () {
+        span.classList.add("fast-span");
+      }, 600);
+    } else if (count === 25) {
+      setTimeout(function () {
+        span.classList.add("slowest-span");
+      }, 650);
+    }
+
+    count++;
+
+    if (count === splitoffer.length) {
+      stopofferTimer();
+      return;
+    }
+  }
+  function stopofferTimer() {
+    clearInterval(offerTimer);
+    offerTimer = null;
+  }
+}
+
+function showBtns() {
+  setTimeout(() => {
+    btns.forEach(function (btn) {
+      btn.classList.add("show-text");
+    });
+  }, 2700);
+}

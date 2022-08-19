@@ -150,65 +150,99 @@ body {
 
 /* =============intro section ============= */
 .intro-section {
-  width: 100vw;
   min-height: 90vh;
-  background-image: linear-gradient(to bottom, #020f1f, #05182d, #020f1f);
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 100vw;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-
+  justify-content: center;
   flex-direction: column;
-  z-index: -1;
+  background-color: var(--linear1);
 }
 
-/* =====================QUESTION CONTAINER================== */
-.question-text {
-  width: 350px;
-  letter-spacing: 1.2px;
-  line-height: 35px;
+/* =====================text CONTAINER================== */
+.text-section {
+  width: 100vw;
 
-  margin-top: 20px;
-  text-align: center;
-  text-transform: capitalize;
-  font-family: var(--fontSansSerif);
-  font-weight: 400;
-  color: var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.name {
-  margin-top: 20px;
-  font-size: 18px;
-  transition: 600ms ease-in;
-  transform: translateX(300%);
-}
+
+/* =================question H3 =========================== */
 .question {
-  transition: 400ms ease-in;
-  transform: translateX(-300%);
+  width: 100vw;
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--mainColor);
+  margin-bottom: 20px;
 }
-.highlight {
-  font-family: var(--fontSerif);
-  font-size: 20px;
-  font-weight: 700;
-  font-style: italic;
+
+/* =============================NAME H3 ========================== */
+.name {
+  width: 100vw;
+  font-family: sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mainColor);
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* ==============================.OFFER H3========================== */
+.offer {
+  width: 100vw;
+  font-family: sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mainColor);
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* =========================NORMAL TEXT ========================== */
+.normal-text {
+  font-size: 15px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+/* ========================HIGHLIGHTED TEXT ================== */
+.highlighted-text {
+  font-size: 18px;
   color: whitesmoke;
+  font-family: var(--fontSerif);
+  font-style: italic;
+  font-weight: 700;
 }
+/* ================question -MARK============== */
+.question-mark {
+  font-size: 18px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
 /* ================BTN CONTAINERS========================= */
 
 .btns-container {
-  height: 50vh;
-
+  height: 30vh;
   width: 100vw;
-
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   align-self: flex-end;
 }
 .btn {
-  margin-bottom: 50px;
+  opacity: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -710,7 +744,7 @@ body {
   background-color: var(--mainColor);
 }
 .bg-overlay {
-  background-image: url(./electronic-brain-vector-17222489.png);
+  background-image: url(./IMAGES/electronic-brain-vector-17222489.png);
   width: 100vw;
   min-height: 90vh;
   position: absolute;
@@ -926,11 +960,7 @@ body {
     width: 100px;
     font-size: 10px;
   }
-  .question-text {
-    width: 200px;
-    font-size: 10px;
-    line-height: 20px;
-  }
+
   .btn {
     width: 100px;
   }
@@ -965,6 +995,18 @@ body {
   .brain {
     margin-top: 30px;
     width: 100px;
+  }
+
+  .normal-text {
+    font-size: 8px;
+  }
+  .highlighted-text {
+    font-size: 10px;
+  }
+
+  /* ================question -MARK============== */
+  .question-mark {
+    font-size: 10px;
   }
 }
 
@@ -1087,7 +1129,7 @@ body {
   .intro-section {
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .question-text {
     text-align: center;
@@ -1130,6 +1172,18 @@ body {
     height: 15vh;
     background-color: var(--linear1);
   }
+
+  .normal-text {
+    font-size: 30px;
+  }
+  .highlighted-text {
+    font-size: 40px;
+  }
+
+  /* ================question -MARK============== */
+  .question-mark {
+    font-size: 40px;
+  }
 }
 /* =================ipads sections height adjustement */
 @media (max-width: 912px) and (min-width: 750px) {
@@ -1160,6 +1214,28 @@ body {
   }
   .dates {
     width: 70vw;
+  }
+
+  .normal-text {
+    font-size: 24px;
+    font-family: var(--fontSansSerif);
+    color: var(--mainColor);
+    font-weight: 500;
+  }
+  .highlighted-text {
+    font-size: 28px;
+    color: whitesmoke;
+    font-family: var(--fontSerif);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  /* ================question -MARK============== */
+  .question-mark {
+    font-size: 28px;
+    font-family: var(--fontSansSerif);
+    color: var(--mainColor);
+    font-weight: 500;
   }
 }
 
@@ -1292,4 +1368,117 @@ body {
 }
 .hide-grid-front p {
   opacity: 0;
+}
+
+/* ===================================INTRODUCTION ANIMATION AND JS CLASSES ======= */
+/* ===================normal span ========================= */
+.normal-span {
+  display: inline-block;
+
+  transition: all 50ms ease-in-out;
+  transform: translate(2px, 30px);
+  opacity: 0;
+}
+
+/* ===========================SPANS SPEED ============================= */
+.slowest-span {
+  transition: 500ms ease-out;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.slow-span {
+  transition: 600ms ease-in-out;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.slower-span {
+  transition: 250ms ease-in;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.fast-span {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.space-block {
+  width: 0px;
+  height: 1px;
+  z-index: 1;
+}
+.double-space-block {
+  width: 0px;
+  height: 1px;
+}
+.space-out {
+  animation: increment 0.5s normal forwards ease-in-out;
+}
+
+.double-space-out {
+  animation: doubleIncrement 0.5s normal forwards ease-in-out;
+}
+
+.text-background {
+  margin-top: 120px;
+  width: 150vw;
+  overflow-x: hidden;
+  opacity: 0.3;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 10px 10px 10px black;
+  mix-blend-mode: overlay;
+  display: inline-block;
+  padding: 20px;
+  font-size: 450px;
+  transition: 400ms ease-in;
+}
+
+/* ===========================animation for mobile========================== */
+.mobile-space-out {
+  animation: mobileIncrement 0.5s normal forwards ease-in-out;
+}
+
+.mobile-double-space-out {
+  animation: mobileDoubleIncrement 0.5s normal forwards ease-in-out;
+}
+@keyframes mobileIncrement {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 1px;
+  }
+}
+@keyframes mobileDoubleIncrement {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 4px;
+  }
+}
+
+/* ===========================animation for pc/ipad========================== */
+.space-out {
+  animation: increment 0.5s normal forwards ease-in-out;
+}
+
+.double-space-out {
+  animation: doubleIncrement 0.5s normal forwards ease-in-out;
+}
+@keyframes increment {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 5px;
+  }
+}
+@keyframes doubleIncrement {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20px;
+  }
 }

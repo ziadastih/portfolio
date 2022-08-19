@@ -65,7 +65,7 @@ body {
 .nav-bar {
   height: 10vh;
   width: 100vw;
-  background-color: whitesmoke;
+  background-image: linear-gradient(to bottom, var(--linear2), var(--linear1));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,7 +81,7 @@ body {
 .links-container {
   position: absolute;
   width: 100vw;
-  background-color: whitesmoke;
+  background-image: linear-gradient(to bottom, var(--linear2), var(--linear1));
   display: flex;
   transform: translateY(-200%);
   align-items: center;
@@ -110,7 +110,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--textfont);
+  color: var(--mainColor);
   margin-top: 40px;
   gap: 5px;
 }
@@ -128,6 +128,7 @@ body {
   margin-right: 20px;
   transition: 300ms ease-in;
   cursor: pointer;
+  opacity: 0.5;
 }
 
 .line {
@@ -163,13 +164,21 @@ body {
 /* =====================text CONTAINER================== */
 .text-section {
   width: 100vw;
-
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+.intro-bg-overlay {
+  width: 100vw;
+  height: 90vh;
+  background-image: url(./IMAGES/electronic-brain-vector-17222489.png);
+  background-repeat: no-repeat;
+  background-position: center;
 
+  position: absolute;
+  opacity: 0.3;
+}
 /* =================question H3 =========================== */
 .question {
   width: 100vw;
@@ -1099,6 +1108,7 @@ body {
     width: 70vw;
     display: flex;
     transform: translateY(0);
+    background-image: none;
   }
   .nav-links {
     width: 70vw;
@@ -1244,7 +1254,7 @@ body {
   opacity: 0.5;
 }
 .link a:hover {
-  color: var(--mainColor);
+  color: whitesmoke;
 }
 .highlight:hover {
   color: var(--SecondColor);
@@ -1346,7 +1356,7 @@ body {
   border: none;
   border-radius: 50%;
   background-color: var(--mainColor);
-  bottom: -10px;
+  bottom: 40px;
   left: 2rem;
   width: 50px;
   height: 50px;
@@ -1356,7 +1366,7 @@ body {
   border: none;
 
   background-color: var(--mainColor);
-  bottom: 0;
+  bottom: 40px;
   left: 10px;
 }
 .grid-flip .grid-content {

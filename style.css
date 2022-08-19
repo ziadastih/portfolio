@@ -60,7 +60,7 @@ body {
   background-color: var(--mainColor);
   animation: increase 2s ease-in-out infinite;
 }
-
+/* =============================END OF PRELOADER =============================== */
 /* =================================START OF NAVBAR==================== */
 .nav-bar {
   height: 10vh;
@@ -244,7 +244,7 @@ body {
   z-index: -1;
   transition: all 0.5s;
 }
-
+/* ==========================END OF INTRO SECTION ========================== */
 /* ==================================section roadmap================= */
 .roadmap {
   min-height: 100vh;
@@ -252,15 +252,19 @@ body {
   background-image: linear-gradient(
     to top,
     var(--linear1),
-    var(--linear2),
+    #021d39,
     var(--linear1)
   );
+
   opacity: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
 }
+
 /* ===========================ROADMAP HEADER================= */
 .roadmap-header {
   width: 200px;
@@ -291,7 +295,7 @@ body {
   margin-top: 30px;
   margin-bottom: 3px;
 }
-/* ============================start date ========= */
+/* ============================ DATES ADJUSTEMENTS=============== ======================= */
 .dates {
   width: 80vw;
   display: flex;
@@ -301,23 +305,28 @@ body {
 .dates p {
   font-family: var(--fontSansSerif);
   font-style: italic;
-
   color: var(--mainColor);
   font-size: 12px;
   text-transform: capitalize;
+  text-shadow: 1px 1px 1px var(--mainColor);
 }
-.start-date {
-  border-bottom: 1px solid whitesmoke;
-}
+
 .start-date span {
+  color: whitesmoke;
   font-size: 15px;
 }
-.total-hours {
-  border-bottom: 1px solid whitesmoke;
+.date-line {
+  width: 55px;
+  height: 1px;
+  background-color: #3dc4e6;
+  box-shadow: 1px 1px 10px white;
 }
 .total-hours span {
+  color: whitesmoke;
   font-size: 15px;
 }
+
+/* ==================END OF DATES=================================== */
 /* ===========================rodamap global route==================== */
 .route {
   width: 10px;
@@ -387,7 +396,7 @@ body {
   font-weight: 500;
   color: white;
 }
-/* ==============================main route========== */
+/* ==============================MAIN  ROUTE ================================ */
 .main-route {
   position: relative;
   height: 450px;
@@ -631,6 +640,7 @@ body {
   width: 100px;
 }
 /* ===============end of react================== */
+/* ====================================BRAIN ICON================= */
 .brain {
   width: 150px;
   opacity: 0.2;
@@ -647,6 +657,7 @@ body {
   justify-content: flex-start;
   background-image: linear-gradient(to bottom, #020f1f, #05182d, #020f1f);
 }
+/* ==================projects Header========================== */
 .projects-header {
   width: 200px;
   display: flex;
@@ -659,7 +670,7 @@ body {
 .border-line {
   height: 2px;
   width: 50px;
-  background-color: var(--textfont);
+  background-color: var(--mainColor);
   transition: 300ms ease-in;
   border-radius: 10px;
 }
@@ -668,12 +679,14 @@ body {
   font-family: var(--fontSerif);
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--mainColor);
+  color: whitesmoke;
   text-transform: uppercase;
   margin-top: 30px;
   margin-bottom: 3px;
 }
-/* ======================about me section======== */
+
+/* ==========================END OF PROJECTS SECTION ======================== */
+/* ======================about me section========================== */
 .about-me {
   min-height: 90vh;
   width: 100vw;
@@ -683,6 +696,7 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
+/* ======================ABOUT ME HEADER ========================== */
 .aboutMe-header {
   width: 200px;
   display: flex;
@@ -703,7 +717,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.3;
-  margin-top: 100px;
+
+  margin-top: 130px;
 }
 .aboutMe-header h1 {
   font-family: var(--fontSerif);
@@ -714,13 +729,12 @@ body {
   margin-top: 30px;
   margin-bottom: 3px;
 }
-
+/* ===================GRID-CONTAINER TRANSITION =============== */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 50vw);
   margin-top: 40px;
   overflow: hidden;
-  border-radius: 10px;
 
   background-position: center;
   background-size: contain;
@@ -728,6 +742,7 @@ body {
   background-repeat: no-repeat;
   opacity: 0.8;
 }
+/* =============GRID SIZING AND FLIP ANIMATION ================ */
 .grid {
   cursor: pointer;
   display: flex;
@@ -738,6 +753,7 @@ body {
   color: white;
   text-align: center;
 }
+/* -----------grid -content =========================== */
 .grid-content {
   width: 50vw;
   display: flex;
@@ -874,14 +890,8 @@ body {
   font-size: 20px;
 }
 
-/* ======================about me section ends======== */
+/* ======================about me section ends=================== */
 
-/* =============footer========== */
-.footer {
-  width: 100vw;
-  height: 15vh;
-  background-color: var(--linear1);
-}
 /* =================go to top  btn========= */
 .toTop-btn {
   position: fixed;
@@ -960,9 +970,15 @@ body {
 
 /* =============750px+ view=============== */
 @media only screen and (min-width: 750px) {
+  .date-line {
+    width: 90px;
+  }
+
+  /* ==================GRID -CONTAINER FPR PC/IPAD ================= */
   .grid-container {
     grid-template-columns: repeat(3, 33.3vw);
   }
+
   .grid-content {
     width: 40vw;
   }
@@ -1026,7 +1042,7 @@ body {
     width: 35px;
   }
 
-  /* =========btn================ */
+  /* =========btns for pc/ipad============================= */
   .btn {
     width: 200px;
   }
@@ -1089,10 +1105,32 @@ body {
     transition: 500ms ease-in;
   }
   .dates {
-    width: 50vw;
+    width: 70vw;
+  }
+
+  .dates p {
+    font-size: 20px;
+  }
+  .dates span {
+    font-size: 24px;
+    color: white;
   }
 }
 
+/* =========================media query for 1000 px to adjust the aboutMe height and add  footer for nest hub screen  ======== */
+@media only screen and (min-width: 1000px) {
+  .about-me {
+    min-height: 100vh;
+  }
+  .bg-overlay {
+    min-height: 80vh;
+  }
+  .footer {
+    width: 100vw;
+    height: 15vh;
+    background-color: var(--linear1);
+  }
+}
 /* =================ipads sections height adjustement */
 @media (max-width: 912px) and (min-width: 750px) {
   .intro-section {
@@ -1108,16 +1146,20 @@ body {
     min-height: 70vh;
   }
   .about-me {
-    min-height: 70vh;
+    height: 0;
+    min-height: 80vh;
   }
+
   .grid-body span {
     font-size: 20px;
   }
-  .footer {
-    height: 0vh;
-  }
+
   .bg-overlay {
+    margin-top: 110px;
     min-height: 60vh;
+  }
+  .dates {
+    width: 70vw;
   }
 }
 

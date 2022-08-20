@@ -1282,7 +1282,9 @@ body {
     transition: 500ms ease-in;
   }
   .dates {
-    width: 70vw;
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
   }
 
   .dates p {
@@ -1291,6 +1293,38 @@ body {
   .dates span {
     font-size: 24px;
     color: white;
+  }
+  .roadmap-header {
+    align-items: center;
+    width: 100vw;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .roadmap h1 {
+    font-size: 40px;
+  }
+  .projects-header {
+    align-items: center;
+    width: 100vw;
+  }
+  .projects h1 {
+    font-size: 40px;
+  }
+  .aboutMe-header {
+    align-items: center;
+    width: 100vw;
+  }
+  .about-me h1 {
+    font-size: 40px;
+  }
+  .roadmap-header h1:hover + .border-line {
+    width: 300px;
+  }
+  .aboutMe-header h1:hover + .border-line {
+    width: 250px;
+  }
+  .projects-header h1:hover + .border-line {
+    width: 230px;
   }
 }
 
@@ -1349,6 +1383,8 @@ body {
   }
   .dates {
     width: 70vw;
+    position: static;
+    height: 0;
   }
 
   .normal-text {
@@ -1387,14 +1423,16 @@ body {
 .highlight:hover {
   color: var(--SecondColor);
 }
-.roadmap-header h1:hover + .border-line {
-  width: 190px;
-}
-.aboutMe-header h1:hover + .border-line {
-  width: 150px;
-}
-.projects-header h1:hover + .border-line {
-  width: 140px;
+@media (max-width: 500px) {
+  .roadmap-header h1:hover + .border-line {
+    width: 190px;
+  }
+  .aboutMe-header h1:hover + .border-line {
+    width: 150px;
+  }
+  .projects-header h1:hover + .border-line {
+    width: 140px;
+  }
 }
 .btn:hover:before {
   width: 100%;

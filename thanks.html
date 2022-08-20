@@ -38,18 +38,17 @@
       <div class="form">
         <img src="./IMAGES/ZA-01.png" class="form-logo" alt="" />
         <i class="fa-solid fa-xmark" id="close-form"></i>
-        <h2 class="form-header"></h2>
+        <h2 class="form-header">your message was sent.Thank you</h2>
         <form
           action="https://formsubmit.co/ziadastih12@outlook.com"
           method="POST"
           class="form-inputs"
         >
-          <!-- =================================thanks domain when i host it live -->
-          <!-- <input
+          <input
             type="hidden"
             name="_next"
-            value="https://yourdomain.co/thanks.html"
-          /> -->
+            value="https://http://127.0.0.1:5500/thanks.html"
+          />
           <p>email:</p>
           <input
             type="email"
@@ -60,15 +59,13 @@
           />
 
           <p>message:</p>
-          <textarea
-            class="input"
+          <input
+            class="email-text input"
+            type="text"
             name="message"
-            id=""
-            cols="30"
-            rows="5"
             placeholder="enter your message"
             required
-          ></textarea>
+          />
 
           <button type="submit" class="submit-btn">Send</button>
         </form>

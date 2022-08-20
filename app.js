@@ -1,4 +1,16 @@
-// ============menu toggle==========
+// ===================preloader ==========================
+const preloader = document.querySelector(".pre-loader");
+window.addEventListener("load", function () {
+  preloader.classList.add("hide-preloader");
+});
+window.addEventListener("DOMContentLoaded", function () {
+  animateQuestion();
+  animateName();
+  animateOffer();
+  showBtns();
+});
+
+// ============menu toggle============================
 
 const toggleBtn = document.querySelector(".toggle-btn");
 const lineTwo = document.querySelector(".line-two");
@@ -13,22 +25,26 @@ toggleBtn.addEventListener("click", function () {
 const nameContainer = document.querySelector(".name");
 const questionContainer = document.querySelector(".question");
 const tableText = document.querySelector(".table-text");
-const preloader = document.querySelector(".pre-loader");
-const btns = document.querySelectorAll(".btn");
-window.addEventListener("load", function () {
-  preloader.classList.add("hide-preloader");
+
+// ==================================form function  ====================
+
+const closeForm = document.getElementById("close-form");
+const contactBtn = document.querySelector(".contact");
+const formContainer = document.querySelector(".form-container");
+const formHeader = document.querySelector(".form-header");
+contactBtn.addEventListener("click", function () {
+  formContainer.classList.add("show-form");
+  formHeader.textContent = `let's get started!`;
 });
-window.addEventListener("DOMContentLoaded", function () {
-  questionAnimation();
-  nameAnimation();
-  offerAnimation();
-  showBtns();
+
+closeForm.addEventListener("click", function () {
+  formContainer.classList.remove("show-form");
 });
 // ==============smooth scrolling=====================
 const navBar = document.querySelector(".nav-bar");
 const scrollLinks = document.querySelectorAll(".scroll-link");
 const toTopBtn = document.querySelector(".toTop-btn");
-const contactBtn = document.querySelector(".contact");
+
 window.addEventListener("scroll", function (e) {
   e.preventDefault();
 
@@ -281,7 +297,7 @@ grids.forEach(function (grid) {
 });
 
 // ==============================INTODUCTION ANIMATION FUNCTION ====================
-function questionAnimation() {
+function animateQuestion() {
   const question = document.querySelector(".question");
 
   const questionText = question.innerText;
@@ -369,11 +385,11 @@ function questionAnimation() {
 }
 // ===========================name text animation =================================
 
-function nameAnimation() {
+function animateName() {
   const nameText = document.querySelector(".name");
   const strName = nameText.innerText;
   const splitName = strName.split("");
-  console.log(splitName);
+
   nameText.innerHTML = "";
   for (let i = 0; i < splitName.length; i++) {
     if (i === 1 || i === 5 || i === 7 || i === 17 || i === 18 || i === 29) {
@@ -432,11 +448,11 @@ function nameAnimation() {
   }
 }
 // ===========================name text animation =================================
-function offerAnimation() {
+function animateOffer() {
   const offerText = document.querySelector(".offer");
   const stroffer = offerText.innerText;
   const splitoffer = stroffer.split("");
-  console.log(splitoffer);
+
   offerText.innerHTML = "";
   for (let i = 0; i < splitoffer.length; i++) {
     if (i === 2 || i === 4 || i === 19) {
@@ -494,11 +510,11 @@ function offerAnimation() {
     offerTimer = null;
   }
 }
-
+const btns = document.querySelectorAll(".btn");
 function showBtns() {
   setTimeout(() => {
     btns.forEach(function (btn) {
       btn.classList.add("show-text");
     });
-  }, 2700);
+  }, 2800);
 }

@@ -510,11 +510,9 @@ function animateOffer() {
     offerTimer = null;
   }
 }
-const btns = document.querySelectorAll(".btn");
+
 function showBtns() {
   setTimeout(() => {
-    btns.forEach(function (btn) {
-      btn.classList.add("show-text");
-    });
+    contactBtn.classList.add("show-text");
   }, 2800);
 }

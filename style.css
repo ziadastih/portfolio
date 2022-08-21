@@ -131,6 +131,7 @@ body {
   transition: 300ms ease-in;
   cursor: pointer;
   opacity: 0.5;
+  z-index: 10;
 }
 
 .line {
@@ -273,7 +274,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--linear1);
+  background: radial-gradient(
+    ellipse at bottom,
+    var(--linear1) 0%,
+    var(--linear1) 100%
+  );
 }
 .intro-circles {
   width: 10px;
@@ -297,6 +302,7 @@ body {
 /* =================question H3 =========================== */
 .question {
   width: 100vw;
+
   font-family: sans-serif;
   text-align: center;
   display: flex;
@@ -307,7 +313,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* =============================NAME H3 ========================== */
+/*=============================NAME H3 ========================== */
 .name {
   width: 100vw;
   font-family: sans-serif;
@@ -343,6 +349,7 @@ body {
 .highlighted-text {
   font-size: 18px;
   color: whitesmoke;
+
   font-family: var(--fontSerif);
   font-style: italic;
   font-weight: 700;
@@ -1230,8 +1237,9 @@ body {
     top: 0;
     border: none;
     position: static;
-    width: 70vw;
+    width: 60vw;
     display: flex;
+    margin-right: 100px;
     transform: translateY(0);
     background-image: none;
   }
@@ -1335,6 +1343,7 @@ body {
   }
   .bg-overlay {
     min-height: 80vh;
+    margin-top: 170px;
   }
   .footer {
     width: 100vw;
@@ -1666,121 +1675,790 @@ body {
 
 /* ====================intro page background animation  */
 
-.fixed-stars {
+.medium-speed-stars {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   position: absolute;
   overflow: hidden;
 }
-
-.fixed {
+.medium-speed {
   width: 2px;
   height: 2px;
+  opacity: 1;
+  top: 0;
+  left: 10px;
   background-color: white;
+  animation: moveStars 100s linear infinite;
+  /* ======================================first part of the medium speed on top of page  */
+  box-shadow: 100px 100px 1px white, 200px 100px 1px white,
+    300px 100px 1px white, 400px 100px 1px white, 500px 100px 1px white,
+    600px 100px 1px, 700px 100px 1px white, 800px 100px 1px white,
+    /* ==============================================second section ========= */
+      50px 200px 1px white,
+    170px 200px 1px white, 230px 240px 1px white, 350px 200px 1px white,
+    410px 210px 1px white, 590px 200px 1px white, 610px 200px 1px white,
+    710px 200px 1px white, 830px 200px 1px white,
+    /* ==========================third layer ============================= */
+      130px 400px 1px white,
+    210px 400px 1px white, 320px 400px 1px white, 450px 400px 1px white,
+    530px 400px 1px white, 680px 400px 1px, 710px 400px 1px white,
+    840px 400px 1px white,
+    /* ================================fourth layer ============================ */
+      40px 600px 1px white,
+    120px 600px 1px white, 250px 600px 1px white, 330px 600px 1px white,
+    440px 210px 1px white, 505px 600px 1px white, 690px 600px 1px white,
+    761px 600px 1px white, 808px 600px 1px white,
+    /* ===================================fifth layer ==================== */
+      130px 800px 1px white,
+    310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+    930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+    1440px 800px 1px white;
+}
+.medium-speed::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  opacity: 0.3;
   position: absolute;
+  top: 200px;
+  left: 20px;
+  background-color: white;
+  animation: moveStars 100s linear infinite;
+  /* ======================================first part of the medium speed on top of page  */
+  box-shadow: 100px 100px 1px white, 200px 100px 1px white,
+    300px 100px 1px white, 400px 100px 1px white, 500px 100px 1px white,
+    600px 100px 1px, 700px 100px 1px white, 800px 100px 1px white,
+    /* ==============================================second section ========= */
+      50px 200px 1px white,
+    170px 200px 1px white, 230px 200px 1px white, 350px 200px 1px white,
+    410px 210px 1px white, 590px 200px 1px white, 610px 200px 1px white,
+    710px 200px 1px white, 830px 200px 1px white,
+    /* ==========================third layer ============================= */
+      130px 400px 1px white,
+    210px 400px 1px white, 320px 400px 1px white, 450px 400px 1px white,
+    530px 400px 1px white, 680px 400px 1px, 710px 400px 1px white,
+    840px 400px 1px white,
+    /* ================================fourth layer ============================ */
+      40px 600px 1px white,
+    120px 600px 1px white, 250px 600px 1px white, 330px 600px 1px white,
+    440px 210px 1px white, 505px 600px 1px white, 690px 600px 1px white,
+    761px 600px 1px white, 808px 600px 1px white,
+    /* ===================================fifth layer ==================== */
+      130px 800px 1px white,
+    310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+    930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+    1440px 800px 1px white;
+}
+.medium-speed::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  opacity: 0.3;
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  background-color: white;
+  animation: moveStars 100s linear infinite;
+  /* ======================================first part of the medium speed on top of page  */
+  box-shadow: 100px 100px 1px white, 200px 100px 1px white,
+    300px 100px 1px white, 400px 100px 1px white, 500px 100px 1px white,
+    600px 100px 1px, 700px 100px 1px white, 800px 100px 1px white,
+    /* ==============================================second section ========= */
+      50px 200px 1px white,
+    170px 200px 1px white, 230px 200px 1px white, 350px 200px 1px white,
+    410px 210px 1px white, 590px 200px 1px white, 610px 200px 1px white,
+    710px 200px 1px white, 830px 200px 1px white,
+    /* ==========================third layer ============================= */
+      130px 400px 1px white,
+    210px 400px 1px white, 320px 400px 1px white, 450px 400px 1px white,
+    530px 400px 1px white, 680px 400px 1px, 710px 400px 1px white,
+    840px 400px 1px white,
+    /* ================================fourth layer ============================ */
+      40px 600px 1px white,
+    120px 600px 1px white, 250px 600px 1px white, 330px 600px 1px white,
+    440px 210px 1px white, 505px 600px 1px white, 690px 600px 1px white,
+    761px 600px 1px white, 808px 600px 1px white,
+    /* ===================================fifth layer ==================== */
+      130px 800px 1px white,
+    310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+    930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+    1440px 800px 1px white;
+}
+.medium-speed-two {
+  position: absolute;
+  opacity: 1;
+  width: 2px;
+  height: 2px;
+  opacity: 1;
+  top: 50px;
+  left: 170px;
+  background-color: white;
+  animation: moveStars 100s linear infinite;
+  /* ======================================first part of the medium speed on top of page  */
+  box-shadow: 100px 100px 1px white, 200px 100px 1px white,
+    300px 100px 1px white, 400px 100px 1px white, 500px 100px 1px white,
+    600px 100px 1px, 700px 100px 1px white, 800px 100px 1px white,
+    /* ==============================================second section ========= */
+      50px 200px 1px white,
+    170px 200px 1px white, 230px 200px 1px white, 350px 200px 1px white,
+    410px 210px 1px white, 590px 200px 1px white, 610px 200px 1px white,
+    710px 200px 1px white, 830px 200px 1px white,
+    /* ==========================third layer ============================= */
+      130px 400px 1px white,
+    210px 400px 1px white, 320px 400px 1px white, 450px 400px 1px white,
+    530px 400px 1px white, 680px 400px 1px, 710px 400px 1px white,
+    840px 400px 1px white,
+    /* ================================fourth layer ============================ */
+      40px 600px 1px white,
+    120px 600px 1px white, 250px 600px 1px white, 330px 600px 1px white,
+    440px 210px 1px white, 505px 600px 1px white, 690px 600px 1px white,
+    761px 600px 1px white, 808px 600px 1px white,
+    /* ===================================fifth layer ==================== */
+      130px 800px 1px white,
+    310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+    930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+    1440px 800px 1px white;
+}
+.medium-speed-two::before {
+  content: "";
+  position: absolute;
+  opacity: 0.3;
+  width: 2px;
+  height: 2px;
+  opacity: 0.3;
+  top: 10px;
+  left: 30px;
+  background-color: white;
+  animation: moveStars 100s linear infinite;
+  /* ======================================first part of the medium speed on top of page  */
+  box-shadow: 100px 100px 1px white, 200px 100px 1px white,
+    300px 100px 1px white, 400px 100px 1px white, 500px 100px 1px white,
+    600px 100px 1px, 700px 100px 1px white, 800px 100px 1px white,
+    /* ==============================================second section ========= */
+      50px 200px 1px white,
+    170px 200px 1px white, 230px 200px 1px white, 350px 200px 1px white,
+    410px 210px 1px white, 590px 200px 1px white, 610px 200px 1px white,
+    710px 200px 1px white, 830px 200px 1px white,
+    /* ==========================third layer ============================= */
+      130px 400px 1px white,
+    210px 400px 1px white, 320px 400px 1px white, 450px 400px 1px white,
+    530px 400px 1px white, 680px 400px 1px, 710px 400px 1px white,
+    840px 400px 1px white,
+    /* ================================fourth layer ============================ */
+      40px 600px 1px white,
+    120px 600px 1px white, 250px 600px 1px white, 330px 600px 1px white,
+    440px 210px 1px white, 505px 600px 1px white, 690px 600px 1px white,
+    761px 600px 1px white, 808px 600px 1px white,
+    /* ===================================fifth layer ==================== */
+      130px 800px 1px white,
+    310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+    930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+    1440px 800px 1px white;
+}
+.medium-speed-two::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  opacity: 0.3;
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  background-color: white;
+  animation: moveStars 100s linear infinite;
+  /* ======================================first part of the medium speed on top of page  */
+  box-shadow: 100px 100px 1px white, 200px 100px 1px white,
+    300px 100px 1px white, 400px 100px 1px white, 500px 100px 1px white,
+    600px 100px 1px, 700px 100px 1px white, 800px 100px 1px white,
+    /* ==============================================second section ========= */
+      50px 200px 1px white,
+    170px 200px 1px white, 230px 200px 1px white, 350px 200px 1px white,
+    410px 210px 1px white, 590px 200px 1px white, 610px 200px 1px white,
+    710px 200px 1px white, 830px 200px 1px white,
+    /* ==========================third layer ============================= */
+      130px 400px 1px white,
+    210px 400px 1px white, 320px 400px 1px white, 450px 400px 1px white,
+    530px 400px 1px white, 680px 400px 1px, 710px 400px 1px white,
+    840px 400px 1px white,
+    /* ================================fourth layer ============================ */
+      40px 600px 1px white,
+    120px 600px 1px white, 250px 600px 1px white, 330px 600px 1px white,
+    440px 210px 1px white, 505px 600px 1px white, 690px 600px 1px white,
+    761px 600px 1px white, 808px 600px 1px white,
+    /* ===================================fifth layer ==================== */
+      130px 800px 1px white,
+    310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+    930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+    1440px 800px 1px white;
+}
+.medium-speed-three {
+  position: absolute;
+  opacity: 1;
+  width: 2px;
+  height: 2px;
+  opacity: 1;
+  top: 50px;
+  left: 120px;
+  background-color: white;
+  animation: moveStars 100s linear infinite;
+  /* ======================================first part of the medium speed on top of page  */
+  box-shadow: 100px 100px 1px white, 200px 100px 1px white,
+    300px 100px 1px white, 400px 100px 1px white, 500px 100px 1px white,
+    600px 100px 1px, 700px 100px 1px white, 800px 100px 1px white,
+    /* ==============================================second section ========= */
+      50px 200px 1px white,
+    170px 200px 1px white, 230px 200px 1px white, 350px 200px 1px white,
+    410px 210px 1px white, 590px 200px 1px white, 610px 200px 1px white,
+    710px 200px 1px white, 830px 200px 1px white,
+    /* ==========================third layer ============================= */
+      130px 400px 1px white,
+    210px 400px 1px white, 320px 400px 1px white, 450px 400px 1px white,
+    530px 400px 1px white, 680px 400px 1px, 710px 400px 1px white,
+    840px 400px 1px white,
+    /* ================================fourth layer ============================ */
+      40px 600px 1px white,
+    120px 600px 1px white, 250px 600px 1px white, 330px 600px 1px white,
+    440px 210px 1px white, 505px 600px 1px white, 690px 600px 1px white,
+    761px 600px 1px white, 808px 600px 1px white,
+    /* ===================================fifth layer ==================== */
+      130px 800px 1px white,
+    310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+    930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+    1440px 800px 1px white;
+}
+.medium-speed-three::before {
+  content: "";
+  position: absolute;
+  opacity: 0.3;
+  width: 2px;
+  height: 2px;
+  opacity: 0.3;
+  top: 10px;
+  left: 30px;
+  background-color: white;
+  animation: moveStars 100s linear infinite;
+  /* ======================================first part of the medium speed on top of page  */
+  box-shadow: 100px 100px 1px white, 200px 100px 1px white,
+    300px 100px 1px white, 400px 100px 1px white, 500px 100px 1px white,
+    600px 100px 1px, 700px 100px 1px white, 800px 100px 1px white,
+    /* ==============================================second section ========= */
+      50px 200px 1px white,
+    170px 200px 1px white, 230px 200px 1px white, 350px 200px 1px white,
+    410px 210px 1px white, 590px 200px 1px white, 610px 200px 1px white,
+    710px 200px 1px white, 830px 200px 1px white,
+    /* ==========================third layer ============================= */
+      130px 400px 1px white,
+    210px 400px 1px white, 320px 400px 1px white, 450px 400px 1px white,
+    530px 400px 1px white, 680px 400px 1px, 710px 400px 1px white,
+    840px 400px 1px white,
+    /* ================================fourth layer ============================ */
+      40px 600px 1px white,
+    120px 600px 1px white, 250px 600px 1px white, 330px 600px 1px white,
+    440px 210px 1px white, 505px 600px 1px white, 690px 600px 1px white,
+    761px 600px 1px white, 808px 600px 1px white,
+    /* ===================================fifth layer ==================== */
+      130px 800px 1px white,
+    310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+    930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+    1440px 800px 1px white;
+}
+.medium-speed-three::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  opacity: 0.3;
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  background-color: white;
+  animation: moveStars 100s linear infinite;
+  /* ======================================first part of the medium speed on top of page  */
+  box-shadow: 100px 100px 1px white, 200px 100px 1px white,
+    300px 100px 1px white, 400px 100px 1px white, 500px 100px 1px white,
+    600px 100px 1px, 700px 100px 1px white, 800px 100px 1px white,
+    /* ==============================================second section ========= */
+      50px 200px 1px white,
+    170px 200px 1px white, 230px 200px 1px white, 350px 200px 1px white,
+    410px 210px 1px white, 590px 200px 1px white, 610px 200px 1px white,
+    710px 200px 1px white, 830px 200px 1px white,
+    /* ==========================third layer ============================= */
+      130px 400px 1px white,
+    210px 400px 1px white, 320px 400px 1px white, 450px 400px 1px white,
+    530px 400px 1px white, 680px 400px 1px, 710px 400px 1px white,
+    840px 400px 1px white,
+    /* ================================fourth layer ============================ */
+      40px 600px 1px white,
+    120px 600px 1px white, 250px 600px 1px white, 330px 600px 1px white,
+    440px 210px 1px white, 505px 600px 1px white, 690px 600px 1px white,
+    761px 600px 1px white, 808px 600px 1px white,
+    /* ===================================fifth layer ==================== */
+      130px 800px 1px white,
+    310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+    930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+    1440px 800px 1px white;
 }
 
-.fixed-1 {
-  top: 30px;
-  left: 200px;
+/* ============================medium speed =========== */
+
+@media (min-width: 750px) {
+  .medium-speed-stars {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+  }
+  .medium-speed {
+    width: 2px;
+    height: 2px;
+    opacity: 1;
+
+    background-color: white;
+    animation: moveStars 100s linear infinite;
+    /* ======================================first part of the medium speed on top of page  */
+    box-shadow: 100px 100px 1px white, 300px 100px 1px white,
+      500px 100px 1px white, 700px 100px 1px white, 900px 100px 1px white,
+      1100px 100px 1px, 1300px 100px 1px white, 1400px 100px 1px white,
+      /* ==============================================second section ========= */
+        50px 200px 1px white,
+      370px 200px 1px white, 530px 200px 1px white, 750px 200px 1px white,
+      810px 210px 1px white, 990px 200px 1px white, 1210px 200px 1px white,
+      1410px 200px 1px white, 1430px 200px 1px white,
+      /* ==========================third layer ============================= */
+        130px 400px 1px white,
+      310px 400px 1px white, 520px 400px 1px white, 750px 400px 1px white,
+      930px 400px 1px white, 1180px 400px 1px, 1310px 400px 1px white,
+      1440px 400px 1px white,
+      /* ================================fourth layer ============================ */
+        40px 600px 1px white,
+      320px 600px 1px white, 550px 600px 1px white, 730px 600px 1px white,
+      840px 210px 1px white, 905px 600px 1px white, 1190px 600px 1px white,
+      1461px 600px 1px white, 1408px 600px 1px white,
+      /* ===================================fifth layer ==================== */
+        130px 800px 1px white,
+      310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+      930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+      1440px 800px 1px white,
+      /* ==============================six layer ============================== */
+        40px 1000px 1px white,
+      320px 1000px 1px white, 550px 1000px 1px white, 730px 1000px 1px white,
+      840px 1000px 1px white, 905px 1000px 1px white, 1190px 1000px 1px white,
+      1461px 1000px 1px white, 1408px 1000px 1px white,
+      /* ===========================seven layer ========================= */
+        130px 1200px 1px white,
+      320px 1200px 1px white, 540px 1200px 1px white, 770px 1200px 1px white,
+      950px 1200px 1px white, 1200px 1200px 1px, 1330px 1200px 1px white,
+      1460px 1200px 1px white,
+      /* =================================eight layers ========================= */
+        70px 1400px 1px white,
+      370px 1400px 1px white, 550px 1400px 1px white, 720px 1400px 1px white,
+      810px 1400px 1px white, 915px 1400px 1px white, 1195px 1400px 1px white,
+      1471px 1400px 1px white, 1418px 1400px 1px white;
+  }
+
+  .medium-speed::before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    opacity: 0.3;
+    top: 10px;
+    left: 30px;
+    animation: moveStars 150s linear infinite;
+    /* ======================================first part of the medium speed on top of page  */
+    box-shadow: 100px 100px 1px white, 300px 100px 1px white,
+      500px 100px 1px white, 700px 100px 1px white, 900px 100px 1px white,
+      1100px 100px 1px, 1300px 100px 1px white, 1400px 100px 1px white,
+      /* ==============================================second section ========= */
+        50px 200px 1px white,
+      370px 200px 1px white, 530px 200px 1px white, 750px 200px 1px white,
+      810px 210px 1px white, 990px 200px 1px white, 1210px 200px 1px white,
+      1410px 200px 1px white, 1430px 200px 1px white,
+      /* ==========================third layer ============================= */
+        130px 400px 1px white,
+      310px 400px 1px white, 520px 400px 1px white, 750px 400px 1px white,
+      930px 400px 1px white, 1180px 400px 1px, 1310px 400px 1px white,
+      1440px 400px 1px white,
+      /* ================================fourth layer ============================ */
+        40px 600px 1px white,
+      320px 600px 1px white, 550px 600px 1px white, 730px 600px 1px white,
+      840px 210px 1px white, 905px 600px 1px white, 1190px 600px 1px white,
+      1461px 600px 1px white, 1408px 600px 1px white,
+      /* ===================================fifth layer ==================== */
+        130px 800px 1px white,
+      310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+      930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+      1440px 800px 1px white,
+      /* ==============================six layer ============================== */
+        40px 1000px 1px white,
+      320px 1000px 1px white, 550px 1000px 1px white, 730px 1000px 1px white,
+      840px 210px 1px white, 905px 1000px 1px white, 1190px 1000px 1px white,
+      1461px 1000px 1px white, 1408px 1000px 1px white,
+      /* ===========================seven layer ========================= */
+        130px 1200px 1px white,
+      320px 1200px 1px white, 540px 1200px 1px white, 770px 1200px 1px white,
+      950px 1200px 1px white, 1200px 1200px 1px, 1330px 1200px 1px white,
+      1460px 1200px 1px white,
+      /* =================================eight layers ========================= */
+        70px 1400px 1px white,
+      370px 1400px 1px white, 550px 1400px 1px white, 720px 1400px 1px white,
+      810px 1400px 1px white, 915px 1400px 1px white, 1195px 1400px 1px white,
+      1471px 1400px 1px white, 1418px 1400px 1px white;
+  }
+
+  .medium-speed::after {
+    content: "";
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    opacity: 0.3;
+    top: 1000px;
+    left: 2px;
+    animation: moveStars 100s linear infinite;
+    /* ======================================first part of the medium speed on top of page  */
+    box-shadow: 100px 100px 1px white, 300px 100px 1px white,
+      500px 100px 1px white, 700px 100px 1px white, 900px 100px 1px white,
+      1100px 100px 1px, 1300px 100px 1px white, 1400px 100px 1px white,
+      /* ==============================================second section ========= */
+        50px 200px 1px white,
+      370px 200px 1px white, 530px 200px 1px white, 750px 200px 1px white,
+      810px 210px 1px white, 990px 200px 1px white, 1210px 200px 1px white,
+      1410px 200px 1px white, 1430px 200px 1px white,
+      /* ==========================third layer ============================= */
+        130px 400px 1px white,
+      310px 400px 1px white, 520px 400px 1px white, 750px 400px 1px white,
+      930px 400px 1px white, 1180px 400px 1px, 1310px 400px 1px white,
+      1440px 400px 1px white,
+      /* ================================fourth layer ============================ */
+        40px 600px 1px white,
+      320px 600px 1px white, 550px 600px 1px white, 730px 600px 1px white,
+      840px 210px 1px white, 905px 600px 1px white, 1190px 600px 1px white,
+      1461px 600px 1px white, 1408px 600px 1px white,
+      /* ===================================fifth layer ==================== */
+        130px 800px 1px white,
+      310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+      930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+      1440px 800px 1px white,
+      /* ==============================six layer ============================== */
+        40px 1000px 1px white,
+      320px 1000px 1px white, 550px 1000px 1px white, 730px 1000px 1px white,
+      840px 210px 1px white, 905px 1000px 1px white, 1190px 1000px 1px white,
+      1461px 1000px 1px white, 1408px 1000px 1px white,
+      /* ===========================seven layer ========================= */
+        130px 1200px 1px white,
+      320px 1200px 1px white, 540px 1200px 1px white, 770px 1200px 1px white,
+      950px 1200px 1px white, 1200px 1200px 1px, 1330px 1200px 1px white,
+      1460px 1200px 1px white,
+      /* =================================eight layers ========================= */
+        70px 1400px 1px white,
+      370px 1400px 1px white, 550px 1400px 1px white, 720px 1400px 1px white,
+      810px 1400px 1px white, 915px 1400px 1px white, 1195px 1400px 1px white,
+      1471px 1400px 1px white, 1418px 1400px 1px white;
+  }
+
+  .medium-speed-two {
+    position: absolute;
+    opacity: 1;
+    width: 2px;
+    height: 2px;
+    opacity: 1;
+    top: 210px;
+    left: 400px;
+    background-color: white;
+    animation: moveStars 100s linear infinite;
+    /* ======================================first part of the medium speed on top of page  */
+    box-shadow: 100px 100px 1px white, 300px 100px 1px white,
+      500px 100px 1px white, 700px 100px 1px white, 900px 100px 1px white,
+      1100px 100px 1px, 1300px 100px 1px white, 1400px 100px 1px white,
+      /* ==============================================second section ========= */
+        50px 200px 1px white,
+      370px 200px 1px white, 530px 200px 1px white, 750px 200px 1px white,
+      810px 210px 1px white, 990px 200px 1px white, 1210px 200px 1px white,
+      1410px 200px 1px white, 1430px 200px 1px white,
+      /* ==========================third layer ============================= */
+        130px 400px 1px white,
+      310px 400px 1px white, 520px 400px 1px white, 750px 400px 1px white,
+      930px 400px 1px white, 1180px 400px 1px, 1310px 400px 1px white,
+      1440px 400px 1px white,
+      /* ================================fourth layer ============================ */
+        40px 600px 1px white,
+      320px 600px 1px white, 550px 600px 1px white, 730px 600px 1px white,
+      840px 210px 1px white, 905px 600px 1px white, 1190px 600px 1px white,
+      1461px 600px 1px white, 1408px 600px 1px white,
+      /* ===================================fifth layer ==================== */
+        130px 800px 1px white,
+      310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+      930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+      1440px 800px 1px white,
+      /* ==============================six layer ============================== */
+        40px 1000px 1px white,
+      320px 1000px 1px white, 550px 1000px 1px white, 730px 1000px 1px white,
+      840px 1000px 1px white, 905px 1000px 1px white, 1190px 1000px 1px white,
+      1461px 1000px 1px white, 1408px 1000px 1px white,
+      /* ===========================seven layer ========================= */
+        130px 1200px 1px white,
+      320px 1200px 1px white, 540px 1200px 1px white, 770px 1200px 1px white,
+      950px 1200px 1px white, 1200px 1200px 1px, 1330px 1200px 1px white,
+      1460px 1200px 1px white,
+      /* =================================eight layers ========================= */
+        70px 1400px 1px white,
+      370px 1400px 1px white, 550px 1400px 1px white, 720px 1400px 1px white,
+      810px 1400px 1px white, 915px 1400px 1px white, 1195px 1400px 1px white,
+      1471px 1400px 1px white, 1418px 1400px 1px white;
+  }
+  .medium-speed-two::before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    opacity: 0.3;
+    top: 80px;
+    left: 150px;
+    animation: moveStars 100s linear infinite;
+    /* ======================================first part of the medium speed on top of page  */
+    box-shadow: 100px 100px 1px white, 300px 100px 1px white,
+      500px 100px 1px white, 700px 100px 1px white, 900px 100px 1px white,
+      1100px 100px 1px, 1300px 100px 1px white, 1400px 100px 1px white,
+      /* ==============================================second section ========= */
+        50px 200px 1px white,
+      370px 200px 1px white, 530px 200px 1px white, 750px 200px 1px white,
+      810px 210px 1px white, 990px 200px 1px white, 1210px 200px 1px white,
+      1410px 200px 1px white, 1430px 200px 1px white,
+      /* ==========================third layer ============================= */
+        130px 400px 1px white,
+      310px 400px 1px white, 520px 400px 1px white, 750px 400px 1px white,
+      930px 400px 1px white, 1180px 400px 1px, 1310px 400px 1px white,
+      1440px 400px 1px white,
+      /* ================================fourth layer ============================ */
+        40px 600px 1px white,
+      320px 600px 1px white, 550px 600px 1px white, 730px 600px 1px white,
+      840px 210px 1px white, 905px 600px 1px white, 1190px 600px 1px white,
+      1461px 600px 1px white, 1408px 600px 1px white,
+      /* ===================================fifth layer ==================== */
+        130px 800px 1px white,
+      310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+      930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+      1440px 800px 1px white,
+      /* ==============================six layer ============================== */
+        40px 1000px 1px white,
+      320px 1000px 1px white, 550px 1000px 1px white, 730px 1000px 1px white,
+      840px 210px 1px white, 905px 1000px 1px white, 1190px 1000px 1px white,
+      1461px 1000px 1px white, 1408px 1000px 1px white,
+      /* ===========================seven layer ========================= */
+        130px 1200px 1px white,
+      320px 1200px 1px white, 540px 1200px 1px white, 770px 1200px 1px white,
+      950px 1200px 1px white, 1200px 1200px 1px, 1330px 1200px 1px white,
+      1460px 1200px 1px white,
+      /* =================================eight layers ========================= */
+        70px 1400px 1px white,
+      370px 1400px 1px white, 550px 1400px 1px white, 720px 1400px 1px white,
+      810px 1400px 1px white, 915px 1400px 1px white, 1195px 1400px 1px white,
+      1471px 1400px 1px white, 1418px 1400px 1px white;
+  }
+
+  .medium-speed-two::after {
+    content: "";
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    opacity: 0.3;
+    top: 1000px;
+    left: 100px;
+    animation: moveStars 100s linear infinite;
+    /* ======================================first part of the medium speed on top of page  */
+    box-shadow: 100px 100px 1px white, 300px 100px 1px white,
+      500px 100px 1px white, 700px 100px 1px white, 900px 100px 1px white,
+      1100px 100px 1px, 1300px 100px 1px white, 1400px 100px 1px white,
+      /* ==============================================second section ========= */
+        50px 200px 1px white,
+      370px 200px 1px white, 530px 200px 1px white, 750px 200px 1px white,
+      810px 210px 1px white, 990px 200px 1px white, 1210px 200px 1px white,
+      1410px 200px 1px white, 1430px 200px 1px white,
+      /* ==========================third layer ============================= */
+        130px 400px 1px white,
+      310px 400px 1px white, 520px 400px 1px white, 750px 400px 1px white,
+      930px 400px 1px white, 1180px 400px 1px, 1310px 400px 1px white,
+      1440px 400px 1px white,
+      /* ================================fourth layer ============================ */
+        40px 600px 1px white,
+      320px 600px 1px white, 550px 600px 1px white, 730px 600px 1px white,
+      840px 210px 1px white, 905px 600px 1px white, 1190px 600px 1px white,
+      1461px 600px 1px white, 1408px 600px 1px white,
+      /* ===================================fifth layer ==================== */
+        130px 800px 1px white,
+      310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+      930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+      1440px 800px 1px white,
+      /* ==============================six layer ============================== */
+        40px 1000px 1px white,
+      320px 1000px 1px white, 550px 1000px 1px white, 730px 1000px 1px white,
+      840px 210px 1px white, 905px 1000px 1px white, 1190px 1000px 1px white,
+      1461px 1000px 1px white, 1408px 1000px 1px white,
+      /* ===========================seven layer ========================= */
+        130px 1200px 1px white,
+      320px 1200px 1px white, 540px 1200px 1px white, 770px 1200px 1px white,
+      950px 1200px 1px white, 1200px 1200px 1px, 1330px 1200px 1px white,
+      1460px 1200px 1px white,
+      /* =================================eight layers ========================= */
+        70px 1400px 1px white,
+      370px 1400px 1px white, 550px 1400px 1px white, 720px 1400px 1px white,
+      810px 1400px 1px white, 915px 1400px 1px white, 1195px 1400px 1px white,
+      1471px 1400px 1px white, 1418px 1400px 1px white;
+  }
+
+  .medium-speed-three {
+    position: absolute;
+    opacity: 1;
+    width: 2px;
+    height: 2px;
+    opacity: 1;
+    top: 40px;
+    left: 300px;
+    background-color: white;
+    animation: moveStars 100s linear infinite;
+    /* ======================================first part of the medium speed on top of page  */
+    box-shadow: 100px 100px 1px white, 300px 100px 1px white,
+      500px 100px 1px white, 700px 100px 1px white, 900px 100px 1px white,
+      1100px 100px 1px, 1300px 100px 1px white, 1400px 100px 1px white,
+      /* ==============================================second section ========= */
+        50px 200px 1px white,
+      370px 200px 1px white, 530px 200px 1px white, 750px 200px 1px white,
+      810px 210px 1px white, 990px 200px 1px white, 1210px 200px 1px white,
+      1410px 200px 1px white, 1430px 200px 1px white,
+      /* ==========================third layer ============================= */
+        130px 400px 1px white,
+      310px 400px 1px white, 520px 400px 1px white, 750px 400px 1px white,
+      930px 400px 1px white, 1180px 400px 1px, 1310px 400px 1px white,
+      1440px 400px 1px white,
+      /* ================================fourth layer ============================ */
+        40px 600px 1px white,
+      320px 600px 1px white, 550px 600px 1px white, 730px 600px 1px white,
+      840px 210px 1px white, 905px 600px 1px white, 1190px 600px 1px white,
+      1461px 600px 1px white, 1408px 600px 1px white,
+      /* ===================================fifth layer ==================== */
+        130px 800px 1px white,
+      310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+      930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+      1440px 800px 1px white,
+      /* ==============================six layer ============================== */
+        40px 1000px 1px white,
+      320px 1000px 1px white, 550px 1000px 1px white, 730px 1000px 1px white,
+      840px 1000px 1px white, 905px 1000px 1px white, 1190px 1000px 1px white,
+      1461px 1000px 1px white, 1408px 1000px 1px white,
+      /* ===========================seven layer ========================= */
+        130px 1200px 1px white,
+      320px 1200px 1px white, 540px 1200px 1px white, 770px 1200px 1px white,
+      950px 1200px 1px white, 1200px 1200px 1px, 1330px 1200px 1px white,
+      1460px 1200px 1px white,
+      /* =================================eight layers ========================= */
+        70px 1400px 1px white,
+      370px 1400px 1px white, 550px 1400px 1px white, 720px 1400px 1px white,
+      810px 1400px 1px white, 915px 1400px 1px white, 1195px 1400px 1px white,
+      1471px 1400px 1px white, 1418px 1400px 1px white;
+  }
+  .medium-speed-three::before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    opacity: 0.3;
+    top: 10px;
+    left: 110px;
+    animation: moveStars 100s linear infinite;
+    /* ======================================first part of the medium speed on top of page  */
+    box-shadow: 100px 100px 1px white, 300px 100px 1px white,
+      500px 100px 1px white, 700px 100px 1px white, 900px 100px 1px white,
+      1100px 100px 1px, 1300px 100px 1px white, 1400px 100px 1px white,
+      /* ==============================================second section ========= */
+        50px 200px 1px white,
+      370px 200px 1px white, 530px 200px 1px white, 750px 200px 1px white,
+      810px 210px 1px white, 990px 200px 1px white, 1210px 200px 1px white,
+      1410px 200px 1px white, 1430px 200px 1px white,
+      /* ==========================third layer ============================= */
+        130px 400px 1px white,
+      310px 400px 1px white, 520px 400px 1px white, 750px 400px 1px white,
+      930px 400px 1px white, 1180px 400px 1px, 1310px 400px 1px white,
+      1440px 400px 1px white,
+      /* ================================fourth layer ============================ */
+        40px 600px 1px white,
+      320px 600px 1px white, 550px 600px 1px white, 730px 600px 1px white,
+      840px 210px 1px white, 905px 600px 1px white, 1190px 600px 1px white,
+      1461px 600px 1px white, 1408px 600px 1px white,
+      /* ===================================fifth layer ==================== */
+        130px 800px 1px white,
+      310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+      930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+      1440px 800px 1px white,
+      /* ==============================six layer ============================== */
+        40px 1000px 1px white,
+      320px 1000px 1px white, 550px 1000px 1px white, 730px 1000px 1px white,
+      840px 210px 1px white, 905px 1000px 1px white, 1190px 1000px 1px white,
+      1461px 1000px 1px white, 1408px 1000px 1px white,
+      /* ===========================seven layer ========================= */
+        130px 1200px 1px white,
+      320px 1200px 1px white, 540px 1200px 1px white, 770px 1200px 1px white,
+      950px 1200px 1px white, 1200px 1200px 1px, 1330px 1200px 1px white,
+      1460px 1200px 1px white,
+      /* =================================eight layers ========================= */
+        70px 1400px 1px white,
+      370px 1400px 1px white, 550px 1400px 1px white, 720px 1400px 1px white,
+      810px 1400px 1px white, 915px 1400px 1px white, 1195px 1400px 1px white,
+      1471px 1400px 1px white, 1418px 1400px 1px white;
+  }
+
+  .medium-speed-three::after {
+    content: "";
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    opacity: 0.3;
+    top: 2000px;
+    left: 40px;
+    animation: moveStars 100s linear infinite;
+    /* ======================================first part of the medium speed on top of page  */
+    box-shadow: 100px 100px 1px white, 300px 100px 1px white,
+      500px 100px 1px white, 700px 100px 1px white, 900px 100px 1px white,
+      1100px 100px 1px, 1300px 100px 1px white, 1400px 100px 1px white,
+      /* ==============================================second section ========= */
+        50px 200px 1px white,
+      370px 200px 1px white, 530px 200px 1px white, 750px 200px 1px white,
+      810px 210px 1px white, 990px 200px 1px white, 1210px 200px 1px white,
+      1410px 200px 1px white, 1430px 200px 1px white,
+      /* ==========================third layer ============================= */
+        130px 400px 1px white,
+      310px 400px 1px white, 520px 400px 1px white, 750px 400px 1px white,
+      930px 400px 1px white, 1180px 400px 1px, 1310px 400px 1px white,
+      1440px 400px 1px white,
+      /* ================================fourth layer ============================ */
+        40px 600px 1px white,
+      320px 600px 1px white, 550px 600px 1px white, 730px 600px 1px white,
+      840px 210px 1px white, 905px 600px 1px white, 1190px 600px 1px white,
+      1461px 600px 1px white, 1408px 600px 1px white,
+      /* ===================================fifth layer ==================== */
+        130px 800px 1px white,
+      310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
+      930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
+      1440px 800px 1px white,
+      /* ==============================six layer ============================== */
+        40px 1000px 1px white,
+      320px 1000px 1px white, 550px 1000px 1px white, 730px 1000px 1px white,
+      840px 210px 1px white, 905px 1000px 1px white, 1190px 1000px 1px white,
+      1461px 1000px 1px white, 1408px 1000px 1px white,
+      /* ===========================seven layer ========================= */
+        130px 1200px 1px white,
+      320px 1200px 1px white, 540px 1200px 1px white, 770px 1200px 1px white,
+      950px 1200px 1px white, 1200px 1200px 1px, 1330px 1200px 1px white,
+      1460px 1200px 1px white,
+      /* =================================eight layers ========================= */
+        70px 1400px 1px white,
+      370px 1400px 1px white, 550px 1400px 1px white, 720px 1400px 1px white,
+      810px 1400px 1px white, 915px 1400px 1px white, 1195px 1400px 1px white,
+      1471px 1400px 1px white, 1418px 1400px 1px white;
+  }
 }
-.fixed-2 {
-  top: 25px;
-  left: 400px;
-}
-.fixed-3 {
-  top: 250px;
-  left: 250px;
-}
-.fixed-4 {
-  top: 350px;
-  left: 200px;
-}
-.fixed-5 {
-  top: 450px;
-  left: 320px;
-}
-.fixed-6 {
-  top: 200px;
-  left: 460px;
-}
-.fixed-7 {
-  top: 320px;
-  left: 500px;
-}
-.fixed-8 {
-  top: 420px;
-  left: 640px;
-}
-.fixed-9 {
-  top: 600px;
-  left: 700px;
-}
-.fixed-10 {
-  top: 100px;
-  left: 800px;
-}
-.fixed-11 {
-  top: 34px;
-  left: 950px;
-}
-.fixed-12 {
-  top: 25px;
-  right: 200px;
-}
-.fixed-13 {
-  top: 310px;
-  right: 420px;
-}
-.fixed-14 {
-  top: 80px;
-  right: 320px;
-}
-.fixed-15 {
-  bottom: 10px;
-  left: 900px;
-}
-.fixed-16 {
-  top: 290px;
-  right: 40px;
-}
-.fixed-17 {
-  top: 200px;
-  right: 130px;
-}
-.fixed-18 {
-  bottom: 300px;
-  right: 300px;
-}
-.fixed-19 {
-  top: 65px;
-  right: 400px;
-}
-.fixed-20 {
-  top: 0px;
-  left: 600px;
-}
-.fixed-21 {
-  bottom: 300px;
-  right: 700px;
-}
-.fixed-22 {
-  bottom: 220px;
-  right: 600px;
-}
-.fixed-23 {
-  bottom: 70px;
-  right: 70px;
-}
-.fixed-24 {
-  bottom: 140px;
-  right: 240px;
-}
-.fixed-25 {
-  bottom: 130px;
-  left: 240px;
-}
-.fixed-26 {
-  top: 70px;
-  left: 100px;
+@keyframes moveStars {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2000px);
+  }
 }

@@ -30,6 +30,7 @@ const tableText = document.querySelector(".table-text");
 
 const closeForm = document.getElementById("close-form");
 const contactBtn = document.querySelector(".contact");
+
 const formContainer = document.querySelector(".form-container");
 const formHeader = document.querySelector(".form-header");
 contactBtn.addEventListener("click", function () {
@@ -510,9 +511,10 @@ function animateOffer() {
     offerTimer = null;
   }
 }
-
+const stars = document.querySelector(".medium-speed-stars");
 function showBtns() {
   setTimeout(() => {
     contactBtn.classList.add("show-text");
+    stars.classList.add("show-stars");
   }, 2800);
 }

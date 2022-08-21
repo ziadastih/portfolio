@@ -1680,6 +1680,10 @@ body {
   height: 100vh;
   position: absolute;
   overflow: hidden;
+  visibility: hidden;
+}
+.show-stars {
+  visibility: visible;
 }
 .medium-speed {
   width: 2px;
@@ -1712,7 +1716,22 @@ body {
       130px 800px 1px white,
     310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
     930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
-    1440px 800px 1px white;
+    1440px 800px 1px white,
+    /* ==============================six layer ============================== */
+      40px 1000px 1px white,
+    120px 1020px 1px white, 50px 1030px 1px white, 130px 1050px 1px white,
+    80px 1001px 1px white, 105px 1005px 1px white, 190px 1070px 1px white,
+    140px 1100px 1px white, 148px 1110px 1px white,
+    /* ===========================seven layer ========================= */ 130px
+      1190px 1px white,
+    320px 1210px 1px white, 240px 1205px 1px white, 270px 1280px 1px white,
+    350px 1200px 1px white, 275px 1205px 1px, 130px 1005px 1px white,
+    146px 1204px 1px white,
+    /* =================================eight layers ========================= */
+      70px 1400px 1px white,
+    370px 1310px 1px white, 250px 1408px 1px white, 320px 1413px 1px white,
+    210px 1391px 1px white, 215px 1420px 1px white, 195px 1453px 1px white,
+    171px 1480px 1px white, 118px 1401px 1px white;
 }
 .medium-speed::after {
   content: "";
@@ -1747,7 +1766,22 @@ body {
       130px 800px 1px white,
     310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
     930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
-    1440px 800px 1px white;
+    1440px 800px 1px white,
+    /* ==============================six layer ============================== */
+      40px 1000px 1px white,
+    120px 1020px 1px white, 50px 1030px 1px white, 130px 1050px 1px white,
+    80px 1001px 1px white, 105px 1005px 1px white, 190px 1070px 1px white,
+    140px 1100px 1px white, 148px 1110px 1px white,
+    /* ===========================seven layer ========================= */ 130px
+      1190px 1px white,
+    320px 1210px 1px white, 240px 1205px 1px white, 270px 1280px 1px white,
+    350px 1200px 1px white, 275px 1205px 1px, 130px 1005px 1px white,
+    146px 1204px 1px white,
+    /* =================================eight layers ========================= */
+      70px 1400px 1px white,
+    370px 1310px 1px white, 250px 1408px 1px white, 320px 1413px 1px white,
+    210px 1391px 1px white, 215px 1420px 1px white, 195px 1453px 1px white,
+    171px 1480px 1px white, 118px 1401px 1px white;
 }
 .medium-speed::before {
   content: "";
@@ -1782,7 +1816,22 @@ body {
       130px 800px 1px white,
     310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
     930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
-    1440px 800px 1px white;
+    1440px 800px 1px white,
+    /* ==============================six layer ============================== */
+      40px 1000px 1px white,
+    120px 1020px 1px white, 50px 1030px 1px white, 130px 1050px 1px white,
+    80px 1001px 1px white, 105px 1005px 1px white, 190px 1070px 1px white,
+    140px 1100px 1px white, 148px 1110px 1px white,
+    /* ===========================seven layer ========================= */ 130px
+      1190px 1px white,
+    320px 1210px 1px white, 240px 1205px 1px white, 270px 1280px 1px white,
+    350px 1200px 1px white, 275px 1205px 1px, 130px 1005px 1px white,
+    146px 1204px 1px white,
+    /* =================================eight layers ========================= */
+      70px 1400px 1px white,
+    370px 1310px 1px white, 250px 1408px 1px white, 320px 1413px 1px white,
+    210px 1391px 1px white, 215px 1420px 1px white, 195px 1453px 1px white,
+    171px 1480px 1px white, 118px 1401px 1px white;
 }
 .medium-speed-two {
   position: absolute;
@@ -1817,7 +1866,22 @@ body {
       130px 800px 1px white,
     310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
     930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
-    1440px 800px 1px white;
+    1440px 800px 1px white,
+    /* ==============================six layer ============================== */
+      40px 1000px 1px white,
+    120px 1020px 1px white, 50px 1030px 1px white, 130px 1050px 1px white,
+    80px 1001px 1px white, 105px 1005px 1px white, 190px 1070px 1px white,
+    140px 1100px 1px white, 148px 1110px 1px white,
+    /* ===========================seven layer ========================= */ 130px
+      1190px 1px white,
+    320px 1210px 1px white, 240px 1205px 1px white, 270px 1280px 1px white,
+    350px 1200px 1px white, 275px 1205px 1px, 130px 1005px 1px white,
+    146px 1204px 1px white,
+    /* =================================eight layers ========================= */
+      70px 1400px 1px white,
+    370px 1310px 1px white, 250px 1408px 1px white, 320px 1413px 1px white,
+    210px 1391px 1px white, 215px 1420px 1px white, 195px 1453px 1px white,
+    171px 1480px 1px white, 118px 1401px 1px white;
 }
 .medium-speed-two::before {
   content: "";
@@ -1853,7 +1917,22 @@ body {
       130px 800px 1px white,
     310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
     930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
-    1440px 800px 1px white;
+    1440px 800px 1px white,
+    /* ==============================six layer ============================== */
+      40px 1000px 1px white,
+    120px 1020px 1px white, 50px 1030px 1px white, 130px 1050px 1px white,
+    80px 1001px 1px white, 105px 1005px 1px white, 190px 1070px 1px white,
+    140px 1100px 1px white, 148px 1110px 1px white,
+    /* ===========================seven layer ========================= */ 130px
+      1190px 1px white,
+    320px 1210px 1px white, 240px 1205px 1px white, 270px 1280px 1px white,
+    350px 1200px 1px white, 275px 1205px 1px, 130px 1005px 1px white,
+    146px 1204px 1px white,
+    /* =================================eight layers ========================= */
+      70px 1400px 1px white,
+    370px 1310px 1px white, 250px 1408px 1px white, 320px 1413px 1px white,
+    210px 1391px 1px white, 215px 1420px 1px white, 195px 1453px 1px white,
+    171px 1480px 1px white, 118px 1401px 1px white;
 }
 .medium-speed-two::after {
   content: "";
@@ -1888,7 +1967,22 @@ body {
       130px 800px 1px white,
     310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
     930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
-    1440px 800px 1px white;
+    1440px 800px 1px white,
+    /* ==============================six layer ============================== */
+      40px 1000px 1px white,
+    120px 1020px 1px white, 50px 1030px 1px white, 130px 1050px 1px white,
+    80px 1001px 1px white, 105px 1005px 1px white, 190px 1070px 1px white,
+    140px 1100px 1px white, 148px 1110px 1px white,
+    /* ===========================seven layer ========================= */ 130px
+      1190px 1px white,
+    320px 1210px 1px white, 240px 1205px 1px white, 270px 1280px 1px white,
+    350px 1200px 1px white, 275px 1205px 1px, 130px 1005px 1px white,
+    146px 1204px 1px white,
+    /* =================================eight layers ========================= */
+      70px 1400px 1px white,
+    370px 1310px 1px white, 250px 1408px 1px white, 320px 1413px 1px white,
+    210px 1391px 1px white, 215px 1420px 1px white, 195px 1453px 1px white,
+    171px 1480px 1px white, 118px 1401px 1px white;
 }
 .medium-speed-three {
   position: absolute;
@@ -1923,7 +2017,22 @@ body {
       130px 800px 1px white,
     310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
     930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
-    1440px 800px 1px white;
+    1440px 800px 1px white,
+    /* ==============================six layer ============================== */
+      40px 1000px 1px white,
+    120px 1020px 1px white, 50px 1030px 1px white, 130px 1050px 1px white,
+    80px 1001px 1px white, 105px 1005px 1px white, 190px 1070px 1px white,
+    140px 1100px 1px white, 148px 1110px 1px white,
+    /* ===========================seven layer ========================= */ 130px
+      1190px 1px white,
+    320px 1210px 1px white, 240px 1205px 1px white, 270px 1280px 1px white,
+    350px 1200px 1px white, 275px 1205px 1px, 130px 1005px 1px white,
+    146px 1204px 1px white,
+    /* =================================eight layers ========================= */
+      70px 1400px 1px white,
+    370px 1310px 1px white, 250px 1408px 1px white, 320px 1413px 1px white,
+    210px 1391px 1px white, 215px 1420px 1px white, 195px 1453px 1px white,
+    171px 1480px 1px white, 118px 1401px 1px white;
 }
 .medium-speed-three::before {
   content: "";
@@ -1932,8 +2041,8 @@ body {
   width: 2px;
   height: 2px;
   opacity: 0.3;
-  top: 10px;
-  left: 30px;
+  top: 70px;
+  left: 60px;
   background-color: white;
   animation: moveStars 100s linear infinite;
   /* ======================================first part of the medium speed on top of page  */
@@ -1959,7 +2068,22 @@ body {
       130px 800px 1px white,
     310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
     930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
-    1440px 800px 1px white;
+    1440px 800px 1px white,
+    /* ==============================six layer ============================== */
+      40px 1000px 1px white,
+    120px 1020px 1px white, 50px 1030px 1px white, 130px 1050px 1px white,
+    80px 1001px 1px white, 105px 1005px 1px white, 190px 1070px 1px white,
+    140px 1100px 1px white, 148px 1110px 1px white,
+    /* ===========================seven layer ========================= */ 130px
+      1190px 1px white,
+    320px 1210px 1px white, 240px 1205px 1px white, 270px 1280px 1px white,
+    350px 1200px 1px white, 275px 1205px 1px, 130px 1005px 1px white,
+    146px 1204px 1px white,
+    /* =================================eight layers ========================= */
+      70px 1400px 1px white,
+    370px 1310px 1px white, 250px 1408px 1px white, 320px 1413px 1px white,
+    210px 1391px 1px white, 215px 1420px 1px white, 195px 1453px 1px white,
+    171px 1480px 1px white, 118px 1401px 1px white;
 }
 .medium-speed-three::after {
   content: "";
@@ -1967,8 +2091,8 @@ body {
   height: 2px;
   opacity: 0.3;
   position: absolute;
-  top: 100px;
-  left: 30px;
+  top: 200px;
+  left: 50px;
   background-color: white;
   animation: moveStars 100s linear infinite;
   /* ======================================first part of the medium speed on top of page  */
@@ -1994,7 +2118,22 @@ body {
       130px 800px 1px white,
     310px 800px 1px white, 520px 800px 1px white, 750px 800px 1px white,
     930px 800px 1px white, 1180px 800px 1px, 1310px 800px 1px white,
-    1440px 800px 1px white;
+    1440px 800px 1px white,
+    /* ==============================six layer ============================== */
+      40px 1000px 1px white,
+    120px 1020px 1px white, 50px 1030px 1px white, 130px 1050px 1px white,
+    80px 1001px 1px white, 105px 1005px 1px white, 190px 1070px 1px white,
+    140px 1100px 1px white, 148px 1110px 1px white,
+    /* ===========================seven layer ========================= */ 130px
+      1190px 1px white,
+    320px 1210px 1px white, 240px 1205px 1px white, 270px 1280px 1px white,
+    350px 1200px 1px white, 275px 1205px 1px, 130px 1005px 1px white,
+    146px 1204px 1px white,
+    /* =================================eight layers ========================= */
+      70px 1400px 1px white,
+    370px 1310px 1px white, 250px 1408px 1px white, 320px 1413px 1px white,
+    210px 1391px 1px white, 215px 1420px 1px white, 195px 1453px 1px white,
+    171px 1480px 1px white, 118px 1401px 1px white;
 }
 
 /* ============================medium speed =========== */

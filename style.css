@@ -995,6 +995,7 @@ body {
   color: whitesmoke;
   text-transform: capitalize;
   transform: translateZ(3rem);
+  line-height: 23px;
 }
 .grid-body span {
   font-family: var(--fontSerif);
@@ -1002,6 +1003,9 @@ body {
   font-weight: 700;
   font-style: italic;
   color: var(--mainColor);
+}
+.grid-five-back p {
+  line-height: 30px;
 }
 .grid-body img {
   width: 18px;

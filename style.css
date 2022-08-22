@@ -851,6 +851,62 @@ body {
   margin-top: 30px;
   margin-bottom: 3px;
 }
+/* ============================project-image============ */
+.project-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.project-img {
+  align-self: flex-start;
+  width: 400px;
+  height: 400px;
+}
+
+.project-text {
+  margin-top: -40px;
+  text-align: center;
+}
+.project-text h2 {
+  font-family: var(--fontSerif);
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+  position: relative;
+}
+.project-text h2::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  bottom: -5px;
+  background-color: var(--mainColor);
+}
+.project-text p {
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  width: 300px;
+  color: white;
+  line-height: 30px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.project-btns-container {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+}
+.project-btns-container a {
+  text-decoration: none;
+}
 
 /* ==========================END OF PROJECTS SECTION ======================== */
 /* ======================about me section========================== */
@@ -1013,9 +1069,7 @@ body {
 .fa-square-whatsapp {
   color: #25d366;
 }
-.fa-discord {
-  color: #7289da;
-}
+
 /* ============front color============== */
 .grid-one-front,
 .grid-two-front {
@@ -1324,6 +1378,7 @@ body {
   .projects h1 {
     font-size: 40px;
   }
+
   .aboutMe-header {
     align-items: center;
     width: 100vw;
@@ -1369,6 +1424,17 @@ body {
     font-size: 40px;
   }
 }
+@media (min-width: 1250px) {
+  .projects-container {
+    overflow: hidden;
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 /* =================ipads sections height adjustement */
 @media (max-width: 912px) and (min-width: 750px) {
   .intro-section {
@@ -1424,7 +1490,21 @@ body {
     font-weight: 500;
   }
 }
-
+@media (max-width: 1245px) and (min-width: 750px) {
+  .project-content {
+    width: 60vw;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .project-text {
+    margin-top: 0;
+    text-align: start;
+  }
+  .project-btns-container {
+    flex-direction: row;
+  }
+}
 /* ==========hovers ============= */
 .toggle:hover {
   opacity: 0.5;
@@ -2606,60 +2686,4 @@ body {
   100% {
     transform: translateY(-2000px);
   }
-}
-
-/* ============================project-image============ */
-.gallery-project {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.gallery-img {
-  align-self: flex-start;
-  width: 400px;
-  height: 400px;
-}
-
-.gallery-text {
-  margin-top: -40px;
-  text-align: center;
-}
-.gallery-text h2 {
-  font-family: var(--fontSerif);
-  font-weight: 700;
-  font-size: 18px;
-  color: white;
-  margin-bottom: 30px;
-  text-transform: capitalize;
-  position: relative;
-}
-.gallery-text h2::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 1px;
-  bottom: -5px;
-  background-color: var(--mainColor);
-}
-.gallery-text p {
-  font-family: var(--fontSansSerif);
-  font-weight: 400;
-  width: 300px;
-  color: white;
-  line-height: 30px;
-  text-transform: capitalize;
-  letter-spacing: 2px;
-}
-.project-btns-container {
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 20px;
-}
-.project-btns-container a {
-  text-decoration: none;
 }

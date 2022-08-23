@@ -41,6 +41,34 @@ contactBtn.addEventListener("click", function () {
 closeForm.addEventListener("click", function () {
   formContainer.classList.remove("show-form");
 });
+
+// ===================info -container ========================
+const infoBtn = document.querySelectorAll(".more-info");
+const infoContainer = document.querySelector(".info-container");
+const infoText = document.querySelector(".text-info");
+const infoTitle = document.querySelector(".info-title");
+const closeInfo = document.getElementById("close-info");
+infoBtn.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    infoContainer.classList.add("show-form");
+    let dataId = e.currentTarget.dataset.id;
+
+    if (dataId === "gallery") {
+      infoTitle.textContent = "gallery shop";
+      infoText.textContent =
+        "This website is not hosted. It was a challenge from johnsmilga.com. It improved my logic and how to make the code reliable and clean, by mapping over the data that is in json file, the section automatically display all the items info in the design we already implemented, the user can live search for a desired item in the input, once a charachter is added to the input it automatically filter throughout all our data to find the items that match and display them.There is also categories related to brands and on click it filters the data to grap the desired brand and items.";
+    } else if (dataId === "tip") {
+      infoTitle.textContent = "tip calculator";
+      infoText.textContent =
+        "Firsly, this website is not hosted. It is a challenge from FrontEndMentor website. This tip calculator doesn't have any submit button, hence it calculates the values when all the required actions are made or any change is made. However if a non valid value has been inserted, the user will catch an error. Secondly, it has a reset button that activates once an action is made. It takes the total bill value, the number of people, the percentage that is selected and calculates the amount of tip per person in addition to the total amount per person. ";
+    }
+  });
+});
+
+closeInfo.addEventListener("click", function () {
+  infoContainer.classList.remove("show-form");
+});
+
 // ==============smooth scrolling=====================
 const navBar = document.querySelector(".nav-bar");
 const scrollLinks = document.querySelectorAll(".scroll-link");
@@ -83,6 +111,7 @@ window.addEventListener("scroll", function (e) {
 });
 
 // ====================smooth scroll function===========
+
 scrollLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -106,6 +135,7 @@ scrollLinks.forEach((link) => {
     window.scrollTo({
       left: 0,
       top: position,
+      behavior: "smooth",
     });
 
     const deviceWidth = screen.width;

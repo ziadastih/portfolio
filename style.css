@@ -433,9 +433,9 @@ body {
 
 /* ===========================ROADMAP HEADER================= */
 .roadmap-header {
-  width: 200px;
+  width: 100vw;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   margin-bottom: 20px;
@@ -826,9 +826,9 @@ body {
 }
 /* ==================projects Header========================== */
 .projects-header {
-  width: 200px;
+  width: 100vw;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   margin-bottom: 20px;
@@ -979,9 +979,9 @@ body {
 }
 /* ======================ABOUT ME HEADER ========================== */
 .aboutMe-header {
-  width: 200px;
+  width: 100vw;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   margin-bottom: 20px;

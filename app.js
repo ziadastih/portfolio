@@ -60,7 +60,7 @@ infoBtn.forEach(function (btn) {
     } else if (dataId === "tip") {
       infoTitle.textContent = "tip calculator";
       infoText.textContent =
-        "Firsly, this website is not hosted. It is a challenge from FrontEndMentor website. This tip calculator doesn't have any submit button, hence it calculates the values when all the required actions are made or any change is made. However if a non valid value has been inserted, the user will catch an error. Secondly, it has a reset button that activates once an action is made. It takes the total bill value, the number of people, the percentage that is selected and calculates the amount of tip per person in addition to the total amount per person. ";
+        "Firstly, this website is not hosted. It is a challenge from FrontEndMentor website. This tip calculator doesn't have any submit button, hence it calculates the values when all the required actions are made or any change is made. However if a non valid value has been inserted, the user will catch an error. Secondly, it has a reset button that activates once an action is made. It takes the total bill value, the number of people, the percentage that is selected and calculates the amount of tip per person in addition to the total amount per person. ";
     }
   });
 });

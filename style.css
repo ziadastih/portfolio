@@ -71,6 +71,7 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 30;
+  overflow: hidden;
 }
 /* ============logo=============== */
 .logo {
@@ -822,6 +823,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   background-image: linear-gradient(to bottom, #020f1f, #05182d, #020f1f);
+  overflow: hidden;
 }
 /* ==================projects Header========================== */
 .projects-header {

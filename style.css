@@ -893,7 +893,7 @@ body {
   width: 300px;
   color: white;
   line-height: 30px;
-  text-transform: capitalize;
+
   letter-spacing: 2px;
 }
 .project-btns-container {
@@ -1195,7 +1195,7 @@ body {
 
 /* ===============MEDIA QUREY================= */
 /* ==============galaxy ford font and roamap */
-@media (max-width: 280px) {
+@media (max-width: 350px) {
   .grid-title {
     font-size: 15px;
   }
@@ -1203,12 +1203,31 @@ body {
     font-size: 12px;
   }
   .grid-body {
-    width: 100px;
-    font-size: 10px;
+    width: 130px;
+    font-size: 8px;
   }
-
+  .grid-body span {
+    font-family: var(--fontSerif);
+    font-size: 8px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--mainColor);
+  }
+  .grid-body img {
+    width: 30px;
+  }
   .btn {
     width: 100px;
+  }
+
+  .project-img {
+    width: 270px;
+  }
+  .project-text p {
+    width: 250px;
+    text-transform: none;
+    font-size: 10px;
+    letter-spacing: 1.2px;
   }
   .start-date {
     font-size: 5px;

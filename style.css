@@ -1,9 +1,18 @@
+/* ===============================QUICK GUIDE ==================== */
+/* 1. FIRST START WITH ROOTS AND GLOBAL selectors  ========= */
+/* 2. after global selectors you have every section details starting from intro - section ,roadmap, project , about me*/
+/* 3. then comes the media query you can ctrl f and search media query the are set in order*/
+/* 4. then there is the hover section  */
+/* 5. then the js classes are set  =========== */
+/* 6. then there is the intordiction text animation followed by the backgroud anumation */
+/* 7. all the keyframes animations  ======================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+/* =======================roots =========================== */
 :root {
   /* =============primary======== */
   --mainColor: #01a1c1;
@@ -19,6 +28,157 @@
   --fontSansSerif: "PT Sans", sans-serif;
   --fontSerif: "Merriweather", serif;
 }
+
+/* ====================GLOBAL CLASSES ======================= */
+/* ===========intro animated text h3 ============== */
+.animated-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ====================sections header and span line ========== */
+.section-header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.section-header h1 {
+  font-family: var(--fontSerif);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 3px;
+}
+.border-line {
+  height: 2px;
+
+  width: 50px;
+  background-color: var(--mainColor);
+  transition: 300ms ease-in;
+}
+
+/* ======================== btns/before content =================== */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontSansSerif);
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: capitalize;
+  width: 150px;
+  height: 50px;
+  border: 1px solid var(--mainColor);
+  background-color: transparent;
+  color: whitesmoke;
+  border-radius: 10px;
+  gap: 10px;
+  transition: all 0.5s;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+/* ================btn inside hover effect =========== */
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: var(--mainColor);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+/* ===========================roadmap global route==================== */
+.route {
+  width: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+.light {
+  position: absolute;
+  height: 0px;
+  width: 2px;
+  background-color: #3dc4e6;
+  transition: 500ms ease-in;
+  box-shadow: 1px 1px 10px white;
+}
+/* ========branch that contains the branch light ========= */
+.branch {
+  height: 20px;
+
+  width: 2px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  cursor: pointer;
+}
+/* =================the light/every language have it own light ====*/
+.branch-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 0px;
+  width: 4px;
+  background-color: #3dc4e6;
+  transition: 200ms ease-in;
+  box-shadow: 1px 1px 10px white;
+}
+/* ===================circle that light up once the checkpoint is reached */
+.circle {
+  position: absolute;
+  opacity: 0.3;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid white;
+  box-shadow: 1px 1px 10px gray;
+}
+/* =====================install text beneath the  language */
+.install {
+  font-size: 8px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  opacity: 0;
+}
+/* =====================the language global style ========== */
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--fontSerif);
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -27,7 +187,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
+/* =================END OF GLOBAL CLASSES ================== */
 /* =========================pre-loader================================ */
 .pre-loader {
   position: fixed;
@@ -60,7 +220,7 @@ body {
   background-color: var(--mainColor);
   animation: increase 2s ease-in-out infinite;
 }
-/* =============================END OF PRELOADER =============================== */
+/* =============================END OF PRELOADER ============================== */
 /* =================================START OF NAVBAR==================== */
 .nav-bar {
   height: 10vh;
@@ -150,9 +310,9 @@ body {
 .line-three {
   width: 20px;
 }
-/* ================end of line============ */
+/* ================end of toggle menu ========================= */
 
-/* =====================form editing =========== */
+/* =====================FORM CONTAINER FIXED ================== =========== */
 .form-container {
   position: fixed;
   top: 0;
@@ -166,7 +326,7 @@ body {
   visibility: hidden;
   z-index: -10;
 }
-
+/* =======================CONTACT FORM ============================= */
 .form {
   width: 80vw;
   height: 600px;
@@ -183,12 +343,14 @@ body {
   border-radius: 10px;
 }
 
+/* =====================form logo top right ================= */
 .form-logo {
   width: 50px;
   position: absolute;
   top: 20px;
   left: 20px;
 }
+/* =====================close btn ===================== */
 #close-form {
   font-size: 24px;
   position: absolute;
@@ -197,7 +359,7 @@ body {
   cursor: pointer;
   color: var(--textfont);
 }
-
+/* ======================form header/ text/input ====== ======================= */
 .form h2 {
   position: absolute;
   top: 80px;
@@ -244,7 +406,7 @@ body {
 .email-text {
   width: 60vw;
 }
-
+/* ===========================submit btns for mail process===================== */
 .submit-btn {
   display: flex;
   align-items: center;
@@ -279,16 +441,8 @@ body {
     var(--linear1) 100%
   );
 }
-.intro-circles {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  position: absolute;
-  background-color: transparent;
-  border: 1px solid whitesmoke;
-  opacity: 0.1;
-}
-/* =====================text CONTAINER================== */
+
+/* =====================into text CONTAINER================== */
 .text-section {
   width: 100vw;
   display: flex;
@@ -297,45 +451,6 @@ body {
   flex-direction: column;
   width: 100vw;
 }
-
-/* =================question H3 =========================== */
-.question {
-  width: 100vw;
-
-  font-family: sans-serif;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  color: var(--mainColor);
-  margin-bottom: 20px;
-}
-
-/*=============================NAME H3 ========================== */
-.name {
-  width: 100vw;
-  font-family: sans-serif;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--mainColor);
-  text-align: center;
-  margin-bottom: 20px;
-}
-/* ==============================.OFFER H3========================== */
-.offer {
-  width: 100vw;
-  font-family: sans-serif;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--mainColor);
-  text-align: center;
-  margin-bottom: 20px;
-}
 /* =========================NORMAL TEXT ========================== */
 .normal-text {
   font-size: 15px;
@@ -343,7 +458,6 @@ body {
   color: var(--mainColor);
   font-weight: 500;
 }
-
 /* ========================HIGHLIGHTED TEXT ================== */
 .highlighted-text {
   font-size: 18px;
@@ -360,7 +474,7 @@ body {
   color: var(--mainColor);
   font-weight: 500;
 }
-
+/* =======================end of Animated text ==============*/
 /* ================BTN CONTAINERS========================= */
 
 .btns-container {
@@ -371,44 +485,13 @@ body {
   justify-content: space-around;
   align-self: flex-end;
 }
+/* =============contact btn for intro remove opacity ,and btn icon animated  ===================== */
 .contact {
   opacity: 0;
 }
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--fontSansSerif);
-  cursor: pointer;
-  font-weight: 700;
-  text-transform: capitalize;
-  width: 150px;
-  height: 50px;
-  border: 1px solid var(--mainColor);
-  background-color: transparent;
-  color: whitesmoke;
-  border-radius: 10px;
-  gap: 10px;
-  transition: all 0.5s;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
+
 .btn i {
   animation: bounce 2s ease-in-out infinite;
-}
-
-.btn::before {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  background-color: var(--mainColor);
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.5s;
 }
 /* ==========================END OF INTRO SECTION ========================== */
 /* ==================================section roadmap================= */
@@ -429,37 +512,6 @@ body {
   justify-content: flex-start;
   position: relative;
   overflow: hidden;
-}
-
-/* ===========================ROADMAP HEADER================= */
-.roadmap-header {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-.border-line {
-  height: 2px;
-
-  width: 50px;
-  background-color: var(--mainColor);
-  transition: 300ms ease-in;
-}
-.roadmap-header span {
-  background-color: var(--mainColor);
-}
-
-.roadmap-header h1 {
-  font-family: var(--fontSerif);
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: white;
-  text-transform: uppercase;
-  margin-top: 30px;
-  margin-bottom: 3px;
 }
 /* ============================ DATES ADJUSTEMENTS=============== ======================= */
 .dates {
@@ -493,76 +545,8 @@ body {
 }
 
 /* ==================END OF DATES=================================== */
-/* ===========================rodamap global route==================== */
-.route {
-  width: 10px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-}
-.light {
-  position: absolute;
-  height: 0px;
-  width: 2px;
-  background-color: #3dc4e6;
-  transition: 500ms ease-in;
-  box-shadow: 1px 1px 10px white;
-}
-.branch {
-  height: 20px;
 
-  width: 2px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  cursor: pointer;
-}
-.branch-light {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  height: 0px;
-  width: 4px;
-  background-color: #3dc4e6;
-  transition: 200ms ease-in;
-  box-shadow: 1px 1px 10px white;
-}
-.circle {
-  position: absolute;
-  opacity: 0.3;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid white;
-  box-shadow: 1px 1px 10px gray;
-}
-.install {
-  font-size: 8px;
-  font-family: var(--fontSansSerif);
-  color: var(--mainColor);
-  font-style: italic;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: capitalize;
-  opacity: 0;
-}
-.text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  font-family: var(--fontSerif);
-  font-size: 20px;
-  font-weight: 500;
-  color: white;
-}
-/* ==============================MAIN  ROUTE ================================ */
+/* ============================== roadmap MAIN  ROUTE ================================ */
 .main-route {
   position: relative;
   height: 450px;
@@ -670,7 +654,7 @@ body {
 }
 /* ===================end of html branch ======= */
 
-/* =============start of css route ===== */
+/* =============start of css route =========== */
 .css-route {
   position: absolute;
   align-items: flex-end;
@@ -824,34 +808,8 @@ body {
   background-image: linear-gradient(to bottom, #020f1f, #05182d, #020f1f);
   overflow: hidden;
 }
-/* ==================projects Header========================== */
-.projects-header {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-.border-line {
-  height: 2px;
-  width: 50px;
-  background-color: var(--mainColor);
-  transition: 300ms ease-in;
-  border-radius: 10px;
-}
 
-.projects-header h1 {
-  font-family: var(--fontSerif);
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: whitesmoke;
-  text-transform: uppercase;
-  margin-top: 30px;
-  margin-bottom: 3px;
-}
-/* ============================project-image============ */
+/* =========================project content ============= */
 .project-content {
   display: flex;
   align-items: center;
@@ -859,13 +817,13 @@ body {
   flex-direction: column;
   margin-bottom: 50px;
 }
-
+/* ===================project -image ============================= */
 .project-img {
   align-self: flex-start;
   width: 400px;
   height: 400px;
 }
-
+/* ==========================PROJECT TEXT/h2 /p =================== */
 .project-text {
   margin-top: -40px;
   text-align: center;
@@ -907,7 +865,7 @@ body {
 .project-btns-container a {
   text-decoration: none;
 }
-
+/* ===========================info container fixed ========================== */
 .info-container {
   position: fixed;
   top: 0;
@@ -921,6 +879,7 @@ body {
   visibility: hidden;
   z-index: -10;
 }
+/* ==================info content where we display our project info ============ */
 .info-content {
   width: 80vw;
   min-height: 300px;
@@ -950,6 +909,7 @@ body {
   font-family: var(--fontSansSerif);
   line-height: 23px;
 }
+/* ===================info top section for the logo and close btn ============= */
 .info-top {
   display: flex;
   align-items: center;
@@ -957,15 +917,16 @@ body {
   margin-top: 20px;
   width: 70vw;
 }
+/* ========================info logo ==================== */
 .info-top img {
   width: 40px;
 }
+/* ===========================info close btn ============================ */
 .info-top i {
   font-size: 20px;
   color: var(--textfont);
   cursor: pointer;
 }
-
 /* ==========================END OF PROJECTS SECTION ======================== */
 /* ======================about me section========================== */
 .about-me {
@@ -977,19 +938,7 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-/* ======================ABOUT ME HEADER ========================== */
-.aboutMe-header {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-.aboutMe-header span {
-  background-color: var(--mainColor);
-}
+/* ==============================backgroung overlay =============== */
 .bg-overlay {
   background-image: url(./IMAGES/electronic-brain-vector-17222489.png);
   width: 100vw;
@@ -1001,16 +950,8 @@ body {
 
   margin-top: 130px;
 }
-.aboutMe-header h1 {
-  font-family: var(--fontSerif);
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: white;
-  text-transform: uppercase;
-  margin-top: 30px;
-  margin-bottom: 3px;
-}
-/* ===================GRID-CONTAINER TRANSITION =============== */
+
+/* ===================GRID-CONTAINER animation  =============== */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 50vw);
@@ -1045,7 +986,7 @@ body {
   transform-style: preserve-3d;
   transition: transform 2s;
 }
-
+/* ======================grid front and back ===================== */
 .grid-front,
 .grid-back {
   position: absolute;
@@ -1125,7 +1066,7 @@ body {
   width: 40px;
 }
 
-/* ============front color============== */
+/* ============front color / making it linear gradient and assiging color for each section ============================== */
 .grid-one-front,
 .grid-two-front {
   background-color: var(--linear1);
@@ -1147,7 +1088,7 @@ body {
   background-color: var(--linear1);
 }
 
-/* =================grid nine=============== */
+/* =================grid nine for mobile centering it in middle =============== */
 
 .grid-nine-content {
   grid-column-start: 1;
@@ -1170,9 +1111,9 @@ body {
   font-size: 20px;
 }
 
-/* ======================about me section ends=================== */
+/* ======================about me section ends=========================== */
 
-/* =================go to top  btn========= */
+/* =================go to top  btn ================================ */
 .toTop-btn {
   position: fixed;
   display: grid;
@@ -1194,41 +1135,21 @@ body {
 }
 
 /* ===============MEDIA QUREY================= */
-/* ==============galaxy ford font and roamap */
+/* ======================media query < 350px ========== */
 @media (max-width: 350px) {
-  .grid-title {
-    font-size: 15px;
-  }
-  .grid-subtitle {
-    font-size: 12px;
-  }
-  .grid-body {
-    width: 130px;
+  /* ======================intro section text for < 350px ============ */
+  .normal-text {
     font-size: 8px;
   }
-  .grid-body span {
-    font-family: var(--fontSerif);
-    font-size: 8px;
-    font-weight: 700;
-    font-style: italic;
-    color: var(--mainColor);
-  }
-  .grid-body img {
-    width: 30px;
-  }
-  .btn {
-    width: 100px;
+  .highlighted-text {
+    font-size: 10px;
   }
 
-  .project-img {
-    width: 270px;
-  }
-  .project-text p {
-    width: 250px;
-    text-transform: none;
+  /* ================question -MARK============== */
+  .question-mark {
     font-size: 10px;
-    letter-spacing: 1.2px;
   }
+  /* ==================================roadmap section < 350px =========== */
   .start-date {
     font-size: 5px;
     border: none;
@@ -1261,22 +1182,54 @@ body {
     margin-top: 30px;
     width: 100px;
   }
-
-  .normal-text {
+  /* ====================project section for <350px  */
+  .project-img {
+    width: 270px;
+  }
+  .project-text p {
+    width: 250px;
+    text-transform: none;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+  /* ===================about me section for <350px  =================== */
+  .grid-title {
+    font-size: 10px;
+  }
+  .grid-subtitle {
+    font-size: 12px;
+  }
+  .grid-body {
+    width: 130px;
     font-size: 8px;
   }
-  .highlighted-text {
-    font-size: 10px;
+  .grid-body span {
+    font-family: var(--fontSerif);
+    font-size: 8px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--mainColor);
   }
-
-  /* ================question -MARK============== */
-  .question-mark {
-    font-size: 10px;
+  .grid-body img {
+    width: 30px;
+  }
+  .btn {
+    width: 100px;
   }
 }
 
 /* =============750px+ view=============== */
 @media only screen and (min-width: 750px) {
+  /* ============================= SECTION-HEADER > 750PX============ */
+  .section-header {
+    align-items: center;
+    width: 100vw;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .section-header h1 {
+    font-size: 40px;
+  }
   /* =======================form editing for ipad/pc====================== */
   .form {
     width: 500px;
@@ -1290,89 +1243,7 @@ body {
   .date-line {
     width: 90px;
   }
-  .info-content {
-    width: 500px;
-  }
-  .info-top {
-    width: 450px;
-  }
-  .info-content p {
-    width: 300px;
-  }
-
-  /* ==================GRID-CONTAINER FPR PC/IPAD ================= */
-  .grid-container {
-    grid-template-columns: repeat(3, 33.3vw);
-  }
-
-  .grid-content {
-    width: 40vw;
-  }
-  .grid-body span {
-    font-size: 24px;
-  }
-  .grid-body {
-    width: 30vw;
-    font-size: 15px;
-  }
-  .grid-front::before {
-    width: 30vw;
-  }
-  .grid-subtitle i {
-    font-size: 20px;
-  }
-  .grid-one-front,
-  .grid-two-front,
-  .grid-three-front {
-    background-image: linear-gradient(
-      to bottom,
-      var(--linear1),
-      var(--linear2)
-    );
-  }
-  .grid-four-front,
-  .grid-five-front,
-  .grid-six-front {
-    background-image: linear-gradient(
-      to bottom,
-      var(--linear2),
-      var(--linear2)
-    );
-  }
-  .grid-seven-front,
-  .grid-eight-front,
-  .grid-nine-front {
-    background-image: linear-gradient(to top, var(--linear1), var(--linear2));
-  }
-
-  /* ============grid nine============== */
-  .grid-nine-content {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    width: 33.3vw;
-  }
-  .grid-nine {
-    grid-column-start: 3;
-    grid-column-end: 4;
-  }
-  .grid-nine-front {
-    width: 33.3vw;
-  }
-  .grid-nine-back {
-    width: 33.3vw;
-  }
-  .grid-nine-back p {
-    font-size: 40px;
-  }
-  .grid-body img {
-    width: 35px;
-  }
-
-  /* =========btns for pc/ipad============================= */
-  .btn {
-    width: 200px;
-  }
-
+  /* ==========================NAVIGATION BAR FOR > 750 PX ======== */
   .toggle-btn {
     display: none;
   }
@@ -1417,21 +1288,11 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .question-text {
-    text-align: center;
-    align-self: flex-start;
-    margin-top: 30px;
-    width: 100vw;
-  }
+
   .highlight {
     font-size: 24px;
   }
-  .name {
-    transition: 1000ms ease-in;
-  }
-  .question {
-    transition: 500ms ease-in;
-  }
+  /* ======================ROADMAP DATES POSITION AND FONT SIZE ========= */
   .dates {
     width: 80vw;
     height: 80vh;
@@ -1445,30 +1306,91 @@ body {
     font-size: 24px;
     color: white;
   }
-  .roadmap-header {
-    align-items: center;
-    width: 100vw;
-    cursor: pointer;
-    z-index: 10;
+  /* =============================PROJECTS info -content > 750px ==================== */
+  .info-content {
+    width: 500px;
   }
-  .roadmap h1 {
-    font-size: 40px;
+  .info-top {
+    width: 450px;
   }
-  .projects-header {
-    align-items: center;
-    width: 100vw;
-  }
-  .projects h1 {
-    font-size: 40px;
+  .info-content p {
+    width: 300px;
   }
 
-  .aboutMe-header {
-    align-items: center;
-    width: 100vw;
+  /* ===================about me > 750px setting the linear gradient for 3 columns grid ============================= */
+  .grid-container {
+    grid-template-columns: repeat(3, 33.3vw);
   }
-  .about-me h1 {
+
+  .grid-content {
+    width: 40vw;
+  }
+  .grid-body span {
+    font-size: 24px;
+  }
+  .grid-body {
+    width: 30vw;
+    font-size: 15px;
+  }
+  .grid-front::before {
+    width: 30vw;
+  }
+  .grid-subtitle i {
+    font-size: 20px;
+  }
+  .grid-one-front,
+  .grid-two-front,
+  .grid-three-front {
+    background-image: linear-gradient(
+      to bottom,
+      var(--linear1),
+      var(--linear2)
+    );
+  }
+  .grid-four-front,
+  .grid-five-front,
+  .grid-six-front {
+    background-image: linear-gradient(
+      to bottom,
+      var(--linear2),
+      var(--linear2)
+    );
+  }
+  .grid-seven-front,
+  .grid-eight-front,
+  .grid-nine-front {
+    background-image: linear-gradient(to top, var(--linear1), var(--linear2));
+  }
+
+  /* ============GRID NINE SETTING IT LOCATION BACK TO NORMAL TO BE IN THE 3RD ROW AND 3RD COLUMN============== */
+  .grid-nine-content {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    width: 33.3vw;
+  }
+  .grid-nine {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+  .grid-nine-front {
+    width: 33.3vw;
+  }
+  .grid-nine-back {
+    width: 33.3vw;
+  }
+  .grid-nine-back p {
     font-size: 40px;
   }
+  .grid-body img {
+    width: 35px;
+  }
+
+  /* =========btns > 750px============================= */
+  .btn {
+    width: 200px;
+  }
+
+  /* =========================HOVERS FOR > 750PX ================= */
   .roadmap-header h1:hover + .border-line {
     width: 300px;
   }
@@ -1479,7 +1401,58 @@ body {
     width: 230px;
   }
 }
+/* =================ipads styling  750px>x<912px for section sizing and animation font size */
+@media (max-width: 912px) and (min-width: 750px) {
+  .intro-section {
+    min-height: 70vh;
+  }
 
+  .roadmap {
+    min-height: 70vh;
+  }
+  .projects {
+    min-height: 70vh;
+  }
+  .about-me {
+    height: 0;
+    min-height: 80vh;
+  }
+
+  .grid-body span {
+    font-size: 20px;
+  }
+
+  .bg-overlay {
+    margin-top: 110px;
+    min-height: 60vh;
+  }
+  .dates {
+    width: 70vw;
+    position: static;
+    height: 0;
+  }
+  /* ==========================into animation text font size 750px>x<912px ================ */
+  .normal-text {
+    font-size: 24px;
+    font-family: var(--fontSansSerif);
+    color: var(--mainColor);
+    font-weight: 500;
+  }
+  .highlighted-text {
+    font-size: 28px;
+    color: whitesmoke;
+    font-family: var(--fontSerif);
+    font-style: italic;
+    font-weight: 700;
+  }
+  /* ================question -MARK============== */
+  .question-mark {
+    font-size: 28px;
+    font-family: var(--fontSansSerif);
+    color: var(--mainColor);
+    font-weight: 500;
+  }
+}
 /* =========================media query for 1000 px to adjust the aboutMe height and add  footer for nest hub screen  ======== */
 @media only screen and (min-width: 1000px) {
   .about-me {
@@ -1507,72 +1480,7 @@ body {
     font-size: 40px;
   }
 }
-@media (min-width: 1250px) {
-  .projects-container {
-    overflow: hidden;
-    width: 95vw;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-}
-
-/* =================ipads sections height adjustement */
-@media (max-width: 912px) and (min-width: 750px) {
-  .intro-section {
-    min-height: 70vh;
-  }
-  .question-text {
-    margin-top: 50px;
-  }
-  .roadmap {
-    min-height: 70vh;
-  }
-  .projects {
-    min-height: 70vh;
-  }
-  .about-me {
-    height: 0;
-    min-height: 80vh;
-  }
-
-  .grid-body span {
-    font-size: 20px;
-  }
-
-  .bg-overlay {
-    margin-top: 110px;
-    min-height: 60vh;
-  }
-  .dates {
-    width: 70vw;
-    position: static;
-    height: 0;
-  }
-
-  .normal-text {
-    font-size: 24px;
-    font-family: var(--fontSansSerif);
-    color: var(--mainColor);
-    font-weight: 500;
-  }
-  .highlighted-text {
-    font-size: 28px;
-    color: whitesmoke;
-    font-family: var(--fontSerif);
-    font-style: italic;
-    font-weight: 700;
-  }
-
-  /* ================question -MARK============== */
-  .question-mark {
-    font-size: 28px;
-    font-family: var(--fontSansSerif);
-    color: var(--mainColor);
-    font-weight: 500;
-  }
-}
+/* ================== media query for project section 750px>x<1245px ========== */
 @media (max-width: 1245px) and (min-width: 750px) {
   .project-content {
     width: 60vw;
@@ -1588,7 +1496,21 @@ body {
     flex-direction: row;
   }
 }
-/* ==========hovers ============= */
+/* =========================media query  for project section > 1250px ====  */
+@media (min-width: 1250px) {
+  .projects-container {
+    overflow: hidden;
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* ===========================end of BODY STYLING ================== */
+
+/* ====================== hover  effect ========================= */
 .toggle:hover {
   opacity: 0.5;
 }
@@ -1618,30 +1540,8 @@ body {
 .btn:hover {
   border: none;
 }
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes increase {
-  0% {
-    width: 30px;
-  }
-  50% {
-    width: 100px;
-  }
-  100% {
-    width: 30px;
-  }
-}
 
-/* ==========================END OF HOVERS AND ANIMATIONS=========== */
+/* ==========================END OF HOVERS =========== */
 /* =============js class============== */
 
 .toggle-rotate {
@@ -1728,9 +1628,10 @@ body {
 .hide-grid-front p {
   opacity: 0;
 }
+/* =======================end of js  classes  ========================= */
 
-/* ===================================INTRODUCTION ANIMATION AND JS CLASSES ======= */
-/* ===================normal span ========================= */
+/* ===================================INTRODUCTION ANIMATION======= */
+/* ===================introduction text animation  ====================================== */
 .normal-span {
   display: inline-block;
 
@@ -1739,7 +1640,7 @@ body {
   opacity: 0;
 }
 
-/* ===========================SPANS SPEED ============================= */
+/* ===========================SPANS SPEED  order for js display for each letter have a certain speed so we can have the after effect animation that is in mind ,it strat slow goes fast and last word come slow then once it is in pplace text expand ============================= */
 .slowest-span {
   transition: 500ms ease-out;
   opacity: 1;
@@ -1759,12 +1660,13 @@ body {
   opacity: 1;
   transform: translate(0, 0);
 }
-
+/* ============the divs between each letter so it gives that smooth expand cz it cannot be done with letter spacing ============== */
 .space-block {
   width: 0px;
   height: 1px;
   z-index: 1;
 }
+/* =====================the div between two words so we double space them ==== */
 .double-space-block {
   width: 0px;
   height: 1px;
@@ -1777,21 +1679,6 @@ body {
   animation: doubleIncrement 0.5s normal forwards ease-in-out;
 }
 
-.text-background {
-  margin-top: 120px;
-  width: 150vw;
-  overflow-x: hidden;
-  opacity: 0.3;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 10px 10px 10px black;
-  mix-blend-mode: overlay;
-  display: inline-block;
-  padding: 20px;
-  font-size: 450px;
-  transition: 400ms ease-in;
-}
-
 /* ===========================animation for mobile========================== */
 .mobile-space-out {
   animation: mobileIncrement 0.5s normal forwards ease-in-out;
@@ -1799,22 +1686,6 @@ body {
 
 .mobile-double-space-out {
   animation: mobileDoubleIncrement 0.5s normal forwards ease-in-out;
-}
-@keyframes mobileIncrement {
-  0% {
-    width: 0px;
-  }
-  100% {
-    width: 1px;
-  }
-}
-@keyframes mobileDoubleIncrement {
-  0% {
-    width: 0px;
-  }
-  100% {
-    width: 4px;
-  }
 }
 
 /* ===========================animation for pc/ipad========================== */
@@ -1825,24 +1696,9 @@ body {
 .double-space-out {
   animation: doubleIncrement 0.5s normal forwards ease-in-out;
 }
-@keyframes increment {
-  0% {
-    width: 0px;
-  }
-  100% {
-    width: 5px;
-  }
-}
-@keyframes doubleIncrement {
-  0% {
-    width: 0px;
-  }
-  100% {
-    width: 20px;
-  }
-}
 
-/* ====================intro page background animation  */
+/* ========================end of intro text animation  animation ====================== */
+/* ====================intro page background animation ======= */
 
 .medium-speed-stars {
   width: 100vw;
@@ -2305,8 +2161,6 @@ body {
     171px 1480px 1px white, 118px 1401px 1px white;
 }
 
-/* ============================medium speed =========== */
-
 @media (min-width: 750px) {
   .medium-speed-stars {
     width: 100vw;
@@ -2762,6 +2616,35 @@ body {
       1471px 1400px 1px white, 1418px 1400px 1px white;
   }
 }
+/* ======================end of intro  background animation ================= */
+
+/* =========================ANIMATION keyframe =========================== */
+
+/* ================================BOUNCE/ INCREASE ANIMATION  ========  */
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes increase {
+  0% {
+    width: 30px;
+  }
+  50% {
+    width: 100px;
+  }
+  100% {
+    width: 30px;
+  }
+}
+
+/* ===============Stars animation =============================== */
 @keyframes moveStars {
   0% {
     transform: translateY(0);
@@ -2770,3 +2653,40 @@ body {
     transform: translateY(-2000px);
   }
 }
+
+/* ================mobile text animation =========================== */
+@keyframes mobileIncrement {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 1px;
+  }
+}
+@keyframes mobileDoubleIncrement {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 4px;
+  }
+}
+/* =============text animation key frame to seperate the letters  =========  */
+@keyframes increment {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 5px;
+  }
+}
+@keyframes doubleIncrement {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20px;
+  }
+}
+
+/* =================END OF ANIMATIONS ======================== */

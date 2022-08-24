@@ -1129,6 +1129,7 @@ body {
   color: white;
   text-decoration: none;
   visibility: hidden;
+  z-index: 11;
 }
 .toTop-btn i {
   animation: bounce 2s ease-in-out infinite;

@@ -1,3 +1,17 @@
+// ==============quick guide =========================
+// 1. start with preloader function  ============================
+// 2. then when page load we display our text functions that are coded in the end of the file
+// 3.menu toggle function to rotate the lines and drop the middle one  and open the container
+// 4.form function and contact btn ,close btn event listener
+// 5.info function ,more info btns trigger get the section depend on the dataset ,it gives the title needed and for every data-id  we hardcoded a text to display
+// 6.window scroll to have a fixed nav ,activate the totop btn .activate the roadmap at a certain offset value
+// 8.scroll links selector , event listener to make the smotth scroll and we remove the value of the fixed nav bar if nav bar have fixed class or not, and if the container is open , in case the container is open we want to reduce the position from the initial position annd then close the container so the user can directly see the section header
+// 9.then we have the roadmap function we select for every branch the light the branch light and the circle we set timeout did it through video slow mo to try be efficient s much as possible with timing.
+// 10.then the est hour function ,on daily average 5 hours spent coding since the starting date
+// 11.then we have the grid function for each we activate the class that we set in js class css ,and we set the opacity 0 for the front words cz we have the background of the back transparent so we cant see the words of the front and we can see the image bg
+// 12.the we have the animated text section, we take the h3 inner text turn it into an array then we display the inner html as a loop of spans with a timer delay to displat them ,we have inside the loop if statment cz we want to highlight some words in the text so we need to give them different types, this animation was seen in after effect so i created it from scratch with different span speed and timeout functions so we get it 100% right.
+// 13. tried to do it with letter spacing it is not possible to work at all , so i used a logic of creating a div between every letter and when the text is animated an i want to expand it i increase the divs width so it space them out, it have multiple classes in js compatible for all screen size
+
 // ===================preloader ==========================
 const preloader = document.querySelector(".pre-loader");
 window.addEventListener("load", function () {

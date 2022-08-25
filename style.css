@@ -464,7 +464,7 @@ body {
   color: whitesmoke;
 
   font-family: var(--fontSerif);
-  font-style: italic;
+  /* font-style: italic; */
   font-weight: 700;
 }
 /* ================question -MARK============== */
@@ -1056,7 +1056,7 @@ body {
   font-family: var(--fontSerif);
   font-size: 18px;
   font-weight: 700;
-  font-style: italic;
+  /* font-style: italic; */
   color: var(--mainColor);
 }
 .grid-five-back p {

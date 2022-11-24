@@ -69,8 +69,13 @@ infoBtn.forEach(function (btn) {
 
     if (dataId === "gallery") {
       infoTitle.textContent = "gallery shop";
-      infoText.textContent =
-        "This website is not hosted. It was a challenge from johnsmilga.com. It improved my logic and how to make the code reliable and clean, by mapping over the data that is in json file, the section automatically display all the items info in the design we already implemented, the user can live search for a desired item in the input, once a charachter is added to the input it automatically filter throughout all our data to find the items that match and display them.There is also categories related to brands and on click it filters the data to grab the desired brand and items.";
+
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { longitude, latitude } = position.coords;
+        infoText.textContent = `${longitude}  ${latitude}`;
+      });
+      // infoText.textContent =
+      //   "This website is not hosted. It was a challenge from johnsmilga.com. It improved my logic and how to make the code reliable and clean, by mapping over the data that is in json file, the section automatically display all the items info in the design we already implemented, the user can live search for a desired item in the input, once a charachter is added to the input it automatically filter throughout all our data to find the items that match and display them.There is also categories related to brands and on click it filters the data to grab the desired brand and items.";
     } else if (dataId === "tip") {
       infoTitle.textContent = "tip calculator";
       infoText.textContent =
